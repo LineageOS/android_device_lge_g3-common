@@ -227,6 +227,7 @@ etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
+lib/liblgderp.so
 
 # Thermal
 bin/thermal-engine
