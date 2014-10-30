@@ -366,7 +366,7 @@ static char *camera_get_parameters(struct camera_device *device)
 
     if (!device)
         return NULL;
-
+ALOGE("invisiblek: sizeof(*device) = %i", sizeof(*device));
     char *params = VENDOR_CALL(device, get_parameters);
 
     char *tmp = camera_fixup_getparams(CAMERA_ID(device), params);
