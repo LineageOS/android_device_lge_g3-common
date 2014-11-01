@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_86e7ca11",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2014-11-01T07:29:17Z",
+      "side": 1,
+      "message": "Could you move this down out of the middle of the screen brightness options?",
+      "revId": "1f9dadd85a1909b4ac8779963909cda0def3ff86",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
