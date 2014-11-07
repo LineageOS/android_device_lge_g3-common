@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_6c57e802",
+        "filename": "overlay/packages/apps/Torch/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2014-11-07T14:55:52Z",
+      "side": 1,
+      "message": "this is probably too conservative\n\n50 is probably a better number",
+      "revId": "ff0492f8116a6692c4db9090988f5db0016b99e2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
