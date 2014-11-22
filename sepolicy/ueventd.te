@@ -1,0 +1,4 @@
+allow ueventd kcal_dev:dir r_dir_perms;
+allow ueventd kcal_dev:file write;
+allow ueventd vfat:file r_file_perms;
+allow ueventd vfat:dir search;
