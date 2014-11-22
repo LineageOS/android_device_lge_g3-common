@@ -1,0 +1,7 @@
+allow thermal-engine self:socket write;
+allow thermal-engine self:capability chown;
+allow thermal-engine sysfs:file write;
+allow thermal-engine socket_device:dir { add_name write };
+allow thermal-engine socket_device:sock_file { create setattr };
+allow thermal-engine sysfs_usb_supply:dir search;
+allow thermal-engine sysfs_usb_supply:file r_file_perms;
