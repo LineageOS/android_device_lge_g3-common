@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_4eacc2ed",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2014-11-22T15:44:21Z",
+      "side": 1,
+      "message": "Stop adding these, they are not used.",
+      "revId": "a4343bb0539bea18a8d5a9bc75362d104f193070",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_aeb9ee30",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2014-11-22T15:44:21Z",
+      "side": 1,
+      "message": "Stop adding these, they are not used.",
+      "revId": "a4343bb0539bea18a8d5a9bc75362d104f193070",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6eaf06e4",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2014-11-22T15:44:21Z",
+      "side": 1,
+      "message": "Stop adding these, they are not used.",
+      "revId": "a4343bb0539bea18a8d5a9bc75362d104f193070",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_0eaabad4",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2014-11-22T15:44:21Z",
+      "side": 1,
+      "message": "Stop adding these, they are not used.",
+      "revId": "a4343bb0539bea18a8d5a9bc75362d104f193070",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
