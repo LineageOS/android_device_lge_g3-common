@@ -1,0 +1,6 @@
+allow sensors self:capability sys_nice;
+allow sensors sns_file:file { getattr open read write };
+allow sensors sns_file:dir { getattr open read };
+allow sensors qmuxd:unix_stream_socket connectto;
+allow sensors qmuxd_socket:dir { write add_name };
+allow sensors qmuxd_socket:sock_file { write create setattr };
