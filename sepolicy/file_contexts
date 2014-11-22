@@ -1,0 +1,1 @@
+/system/bin/qrngd		u:object_r:qrngd_exec:s0
