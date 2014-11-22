@@ -15,6 +15,7 @@ on init
     mkdir /persist 0771 system system
 
     mkdir /sns 0755 system system
+    restorecon /sns
     mkdir /persist-lg 0755 system system
     mkdir /mpt 0755 system system
 
@@ -96,6 +97,7 @@ on post-fs-data
     mkdir /data/logger 0775 system system
     mkdir /sns/cal/ 0644 system system
     mkdir /sns/touch/ 0775 system system
+    restorecon_recursive /sns
 
     mkdir /persist-lg/multimedia 0770 media divxdrm
     chown media divxdrm /persist-lg/multimedia
