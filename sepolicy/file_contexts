@@ -1,0 +1,2 @@
+/system/bin/sysinit		u:object_r:sysinit_exec:s0
+/system/bin/qrngd		u:object_r:qrngd_exec:s0
