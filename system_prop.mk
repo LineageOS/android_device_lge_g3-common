@@ -55,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Qualcomm
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
-    qcom.hw.aac.encoder=true \
+    qcom.hw.aac.encoder=false \
     ro.qualcomm.cabl=0 \
     ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
