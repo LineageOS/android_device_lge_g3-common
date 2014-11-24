@@ -211,3 +211,7 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Default to AwesomePlayer
+PRODUCT_PROPERTY_OVERRIDES += \
+media.stagefright.use-awesome=true
