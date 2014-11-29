@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_c2f1a4cf",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2014-11-29T02:25:27Z",
+      "side": 1,
+      "message": "You should make this just \u0027include\u0027, so that the build fails if device/qcom/sepolicy/sepolicy.mk can\u0027t be included.",
+      "revId": "d3b5dee6cc75860f4834ea5210027e94746830eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
