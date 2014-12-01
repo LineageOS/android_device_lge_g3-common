@@ -19,6 +19,7 @@ package com.android.internal.telephony;
 import static com.android.internal.telephony.RILConstants.*;
 
 import android.content.Context;
+import android.os.AsyncResult;
 import android.os.Message;
 import android.os.Parcel;
 import android.util.Log;
@@ -35,6 +36,9 @@ import com.android.internal.telephony.uicc.IccCardStatus;
  */
 public class LgeLteRIL extends RIL implements CommandsInterface {
     private Message mPendingGetSimStatus;
+    private Message mPendingHardwareConfig;
+    private Message mPendingCdmaSubSrc;
+    private int mPendingCdmaSub;
 
     public LgeLteRIL(Context context, int preferredNetworkType,
             int cdmaSubscription, Integer instanceId) {
@@ -100,12 +104,56 @@ public class LgeLteRIL extends RIL implements CommandsInterface {
     }
 
     @Override
+    public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
+        if (mState != RadioState.RADIO_ON) {
+            mPendingCdmaSubSrc = response;
+            mPendingCdmaSub = cdmaSubscription;
+        } else {
+            super.setCdmaSubscriptionSource(cdmaSubscription, response);
+        }
+    }
+
+    @Override
+    public void
+    getHardwareConfig (Message result) {
+        if (mState != RadioState.RADIO_ON) {
+            mPendingHardwareConfig = result;
+        } else {
+            super.getHardwareConfig(result);
+        }
+    }
+
+    @Override
     protected void switchToRadioState(RadioState newState) {
         super.switchToRadioState(newState);
 
-        if (newState == RadioState.RADIO_ON && mPendingGetSimStatus != null) {
-            super.getIccCardStatus(mPendingGetSimStatus);
-            mPendingGetSimStatus = null;
+        if (newState == RadioState.RADIO_ON) {
+            if (mPendingGetSimStatus != null) {
+                super.getIccCardStatus(mPendingGetSimStatus);
+                mPendingGetSimStatus = null;
+            }
+            if (mPendingCdmaSubSrc != null) {
+                super.setCdmaSubscriptionSource(mPendingCdmaSub, mPendingCdmaSubSrc);
+                mPendingCdmaSubSrc = null;
+            }
+            if (mPendingHardwareConfig != null) {
+                super.getHardwareConfig(mPendingHardwareConfig);
+                mPendingHardwareConfig = null;
+            }
         }
+    }
+
+    @Override
+    public void setCellInfoListRate(int rateInMillis, Message response) {
+        if(mRilVersion < 10) {
+            if (response != null) {
+                CommandException ex = new CommandException(
+                    CommandException.Error.REQUEST_NOT_SUPPORTED);
+                AsyncResult.forMessage(response, null, ex);
+                response.sendToTarget();
+            }
+            return;
+        }
+        super.setCellInfoListRate(rateInMillis, response);
     }
 }
