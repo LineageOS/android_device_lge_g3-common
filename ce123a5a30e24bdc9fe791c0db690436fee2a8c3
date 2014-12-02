@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_aca3ae9d",
+        "filename": "ril/telephony/java/com/android/internal/telephony/LgeLteRIL.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2814
+      },
+      "writtenOn": "2014-12-02T22:20:26Z",
+      "side": 1,
+      "message": "is this specific to g3? I notice your basically doing the same thing all the GSM devices had to do about delaying the message about SIM until radio is on. So is it the same with this?",
+      "revId": "ce123a5a30e24bdc9fe791c0db690436fee2a8c3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
