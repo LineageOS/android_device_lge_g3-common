@@ -1090,7 +1090,7 @@ on property:bluetooth.isEnabled=true
     start btwlancoex
     write /sys/class/bluetooth/hci0/idle_timeout 7000
 
-on chargerlogo
+on charger
    stop bootlogo
    write /sys/class/android_usb/android0/enable 0
    write /sys/class/android_usb/android0/idVendor 1004

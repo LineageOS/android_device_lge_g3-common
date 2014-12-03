@@ -154,6 +154,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
+# Offmode Charging
+PRODUCT_PACKAGES += \
+    battery_0.png \
+    battery_1.png \
+    battery_2.png \
+    battery_3.png \
+    battery_4.png \
+    battery_5.png \
+    battery_charge.png \
+    battery_fail.png \
+    chargerlogo \
+    errorlogo.png
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
