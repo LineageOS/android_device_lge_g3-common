@@ -5,7 +5,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.gapless.enabled=false \
     audio.offload.multiple.enabled=false \
     audio.offload.pcm.enable=true \
-    media.aac_51_output_enabled=true
+    media.aac_51_output_enabled=true \
+    qcom.hw.aac.encoder=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=false \
