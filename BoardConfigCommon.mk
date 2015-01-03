@@ -49,6 +49,7 @@ TARGET_KERNEL_SOURCE := kernel/lge/g3
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
