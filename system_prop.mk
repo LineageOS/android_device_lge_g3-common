@@ -73,6 +73,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.qualcomm.sns.daemon=e \
-    debug.qualcomm.sns.hal=e \
-    debug.qualcomm.sns.libsensor1=e
+    debug.qualcomm.sns.daemon=0 \
+    debug.qualcomm.sns.hal=0 \
+    debug.qualcomm.sns.libsensor1=0
