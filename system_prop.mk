@@ -72,7 +72,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.cwm.forbid_format=/boot,/firmware,/mpt,/persist,/persist-lg,/sns
 
 # Sensors
+#
+# Valid settings (and presumably what they mean):
+#   0      - off
+#   1      - all the things
+#   V or v - verbose
+#   D or d - debug
+#   E or e - errors
+#   W or w - warnings
+#   I or i - info
+#
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.qualcomm.sns.daemon=e \
-    debug.qualcomm.sns.hal=e \
-    debug.qualcomm.sns.libsensor1=e
+    debug.qualcomm.sns.daemon=0 \
+    debug.qualcomm.sns.hal=0 \
+    debug.qualcomm.sns.libsensor1=0
