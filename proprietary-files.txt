@@ -223,6 +223,9 @@ vendor/lib/libmm-abl-oem.so
 # Qualcomm framework
 bin/irsc_util
 
+# Qualcomm quick charge
+bin/hvdcp
+
 # Radio
 -app/qcrilmsgtunnel/qcrilmsgtunnel.apk:app/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk:app/shutdownlistener.apk

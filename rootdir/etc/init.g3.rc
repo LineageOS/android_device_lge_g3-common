@@ -57,6 +57,9 @@ on init
     setprop vold.decrypt ""
     setprop vold.encrypt_progress ""
 
+    # Quick Charge 2.0 daemon
+    setprop persist.usb.hvdcp.detect "true"
+
 on fs
     mount_all ./fstab.g3
     setprop ro.crypto.fuse_sdcard true
@@ -683,6 +686,12 @@ service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
     oneshot
     disabled
 
+service hvdcp /system/bin/hvdcp
+    class core
+    user root
+    group root
+    disabled
+
 service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
     class late_start
     group qcom_oncrpc net_bt_admin inet radio wifi
@@ -1221,6 +1230,12 @@ on property:persist.usb.chgdisabled=0
 
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
+
+on property:persist.usb.hvdcp.detect=true
+    start hvdcp
+
+on property:persist.usb.hvdcp.detect=false
+    stop hvdcp
 
 on property:ro.baseband="msm"
    start atd
