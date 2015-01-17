@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8974
+    gps.msm8974 \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
