@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_b3732ab4",
+        "filename": "cmhw/org/cyanogenmod/hardware/TapToWake.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2015-01-21T20:12:15Z",
+      "side": 1,
+      "message": "Did you test this out? Looks like the string read from the file isn\u0027t a simple 1 or 0.",
+      "revId": "17a2233e17621a121aac48ceb0c729b1a9f42394",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
