@@ -16,6 +16,24 @@
       "revId": "17a2233e17621a121aac48ceb0c729b1a9f42394",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_13acb6ec",
+        "filename": "cmhw/org/cyanogenmod/hardware/TapToWake.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-01-21T20:25:23Z",
+      "side": 1,
+      "message": "Building on the new G2 kernel as we speak (the new G2 driver uses this as well, but CM is using the old version)",
+      "parentUuid": "fad55976_b3732ab4",
+      "revId": "17a2233e17621a121aac48ceb0c729b1a9f42394",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
