@@ -39,6 +39,8 @@ public class LgeLteRIL extends RIL implements CommandsInterface {
     static final String LOG_TAG = "LgeLteRIL";
     private Message mPendingGetSimStatus;
 
+    private boolean isGSM = false;
+
     public LgeLteRIL(Context context, int preferredNetworkType,
             int cdmaSubscription, Integer instanceId) {
         this(context, preferredNetworkType, cdmaSubscription);
@@ -68,8 +70,10 @@ public class LgeLteRIL extends RIL implements CommandsInterface {
         }
         cardStatus.mApplications = new IccCardApplicationStatus[numApplications];
 
+        appStatus = new IccCardApplicationStatus();
         for (int i = 0 ; i < numApplications ; i++) {
-            appStatus = new IccCardApplicationStatus();
+            if (i != 0)
+                appStatus = new IccCardApplicationStatus();
             appStatus.app_type       = appStatus.AppTypeFromRILInt(p.readInt());
             appStatus.app_state      = appStatus.AppStateFromRILInt(p.readInt());
             appStatus.perso_substate = appStatus.PersoSubstateFromRILInt(p.readInt());
@@ -84,7 +88,41 @@ public class LgeLteRIL extends RIL implements CommandsInterface {
             int reamining_count_puk2 = p.readInt();
             cardStatus.mApplications[i] = appStatus;
         }
+        // For Sprint GSM(LTE) only SIM
+        if (numApplications == 1 && !isGSM && appStatus.app_type == appStatus.AppTypeFromRILInt(2)) {
+            status.mApplications = new IccCardApplicationStatus[numApplications + 2];
+            status.mGsmUmtsSubscriptionAppIndex = 0;
+            status.mApplications[status.mGsmUmtsSubscriptionAppIndex] = appStatus;
+            status.mCdmaSubscriptionAppIndex = 1;
+            status.mImsSubscriptionAppIndex = 2;
+            IccCardApplicationStatus appStatus2 = new IccCardApplicationStatus();
+            appStatus2.app_type       = appStatus2.AppTypeFromRILInt(4); // CSIM State
+            appStatus2.app_state      = appStatus.app_state;
+            appStatus2.perso_substate = appStatus.perso_substate;
+            appStatus2.aid            = appStatus.aid;
+            appStatus2.app_label      = appStatus.app_label;
+            appStatus2.pin1_replaced  = appStatus.pin1_replaced;
+            appStatus2.pin1           = appStatus.pin1;
+            appStatus2.pin2           = appStatus.pin2;
+            status.mApplications[status.mCdmaSubscriptionAppIndex] = appStatus2;
+            IccCardApplicationStatus appStatus3 = new IccCardApplicationStatus();
+            appStatus3.app_type       = appStatus3.AppTypeFromRILInt(5); // IMS State
+            appStatus3.app_state      = appStatus.app_state;
+            appStatus3.perso_substate = appStatus.perso_substate;
+            appStatus3.aid            = appStatus.aid;
+            appStatus3.app_label      = appStatus.app_label;
+            appStatus3.pin1_replaced  = appStatus.pin1_replaced;
+            appStatus3.pin1           = appStatus.pin1;
+            appStatus3.pin2           = appStatus.pin2;
+            status.mApplications[status.mImsSubscriptionAppIndex] = appStatus3;
+        }
         return cardStatus;
+    }
+
+    @Override
+    public void setPhoneType(int phoneType){
+        super.setPhoneType(phoneType);
+        isGSM = (phoneType != RILConstants.CDMA_PHONE);
     }
 
     // Hack for Lollipop
