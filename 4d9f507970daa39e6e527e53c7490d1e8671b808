@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_5ab0f48b",
+        "filename": "ril/telephony/java/com/android/internal/telephony/LgeLteRIL.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2015-03-06T05:27:34Z",
+      "side": 1,
+      "message": "Revert this change here. You broke the compile  here. so go go back to Ps2 where it was working",
+      "revId": "4d9f507970daa39e6e527e53c7490d1e8671b808",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
