@@ -1,1 +1,1 @@
-allow time_data_file sysfs:filesystem associate;
+allow vibe_data_file sysfs:filesystem associate;
