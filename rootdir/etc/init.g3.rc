@@ -92,6 +92,9 @@ on post-fs
     chmod 664 /sys/devices/virtual/input/lge_touch/quick_cover_status
     chown system system /sys/devices/virtual/input/lge_touch/quick_cover_status
 
+    # BFQ
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
+
 on post-fs-data
     mkdir /data/tombstones 0775 system system
     mkdir /tombstones/modem 0771 system system
