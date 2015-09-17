@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_d8cb2570",
+        "filename": "sepolicy/system_server.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7202
+      },
+      "writtenOn": "2015-09-17T13:17:38Z",
+      "side": 0,
+      "message": "This is added to common qcom sepolicy here: https://github.com/CyanogenMod/android_vendor_cm/blob/cm-12.1/sepolicy/qcom/system_server.te#L6\n\nShould\u0027n be removed too?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 61
+      },
+      "revId": "9a74263ba91f270450e51252b7e67bbcd4d0f275",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
