@@ -90,8 +90,8 @@ PRODUCT_PACKAGES += \
     bdAddrLoader
 
 # Camera
-PRODUCT_PACKAGES += \
-    camera.msm8974
+#PRODUCT_PACKAGES += \
+#    camera.msm8974
 
 # Display
 PRODUCT_PACKAGES += \
@@ -158,9 +158,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # Offmode Charging
-PRODUCT_PACKAGES += \
-    charger_res_g3 \
-    charger_g3
+#PRODUCT_PACKAGES += \
+#    charger_res_g3 \
+#    charger_g3
 
 # OMX
 PRODUCT_PACKAGES += \
