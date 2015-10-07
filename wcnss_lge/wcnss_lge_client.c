@@ -43,7 +43,7 @@ int wcnss_qmi_get_wlan_address(unsigned char *pBdAddr)
 
     fd = fopen(CALIBRATION_PATH, "r");
     if (fd == NULL) {
-        ALOGE("Failure opening calibration path: %d\n", errno);
+        ALOGE("Failure opening calibration path\n");
         return FAILED;
     }
 
@@ -52,7 +52,7 @@ int wcnss_qmi_get_wlan_address(unsigned char *pBdAddr)
     ret = fread(pBdAddr, sizeof(pBdAddr[0]), 6, fd);
 
     if (ret < 0) {
-        ALOGE("Failure to read calibration data: %d\n", errno);
+        ALOGE("Failure to read calibration data\n");
         fclose(fd);
         return FAILED;
     }
