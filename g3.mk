@@ -106,8 +106,8 @@ PRODUCT_PACKAGES += \
     e2fsck
 
 # GPS
-PRODUCT_PACKAGES += \
-    gps.msm8974
+#PRODUCT_PACKAGES += \
+#    gps.msm8974
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -130,8 +130,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 # Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8974
+#PRODUCT_PACKAGES += \
+#    keystore.msm8974
 
 # Lights
 PRODUCT_PACKAGES += \
