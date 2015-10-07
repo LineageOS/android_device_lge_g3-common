@@ -130,8 +130,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 # Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8974
+#PRODUCT_PACKAGES += \
+#    keystore.msm8974
 
 # Lights
 PRODUCT_PACKAGES += \
