@@ -190,6 +190,7 @@ PRODUCT_PACKAGES += \
 
 # Radio
 PRODUCT_PACKAGES += \
+    libstlport \
     libxml2
 
 # Ramdisk
