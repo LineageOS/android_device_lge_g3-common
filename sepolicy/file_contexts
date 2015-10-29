@@ -3,7 +3,6 @@
 
 /data/system/default_values	u:object_r:mpctl_data_file:s0
 
-/dev/block/mmcblk0(.*)		u:object_r:mmc_block_device:s0
 /dev/pn547			u:object_r:nfc_device:s0
 /dev/rfkill			u:object_r:wpa_device:s0
 /dev/socket/mpctl		u:object_r:mpctl_socket:s0
@@ -19,3 +18,6 @@
 /sns(/.*)?			u:object_r:sensors_persist_file:s0
 
 /dev/block/platform/msm_sdcc\.1/by-name/encrypt		u:object_r:encrypt_block_device:s0
+
+/system/bin/tune2fs              u:object_r:tune2fs_exec:s0
+/system/bin/gsiff_daemon         u:object_r:location_exec:s0
