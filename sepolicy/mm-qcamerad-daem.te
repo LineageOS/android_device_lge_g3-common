@@ -1,0 +1,2 @@
+allow mm-qcamera-daem system_file:file execmod;
+allow mm-qcamera-daem system_data_file:dir { write add_name remove_name };

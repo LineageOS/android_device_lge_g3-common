@@ -1,0 +1,2 @@
+allow chmod sensors_data_file:dir setattr;
+allow chmod sensors_data_file:file { getattr setattr };
