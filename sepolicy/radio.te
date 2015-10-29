@@ -1,1 +1,1 @@
-allow radio lge_touch_sysfs:file rw_file_perms;
+allow radio baseband_prop:property_service set;
