@@ -1,0 +1,2 @@
+allow init lge_touch_sysfs:file { open write setattr relabelto };
+allow init tune2fs_exec:file { open read getattr execute };
