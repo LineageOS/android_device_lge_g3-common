@@ -884,13 +884,11 @@ service svelteoff /system/bin/logwrapper /system/bin/sh /system/etc/init.lge.sve
 	disabled
 	oneshot
 
-service thermal-engine /system/bin/thermal-engine -c /system/etc/thermal-engine-8974.conf
-   class main
-   user root
-   group root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    disabled
+    user root
+    group root
 
 service time_daemon /system/bin/time_daemon
    class late_start
@@ -1048,6 +1046,7 @@ on property:hw.ftm_ptt_start=0
     stop ftm_ptt
 
 on property:init.svc.bootanim=stopped
+    start thermanager
     start write_event_log
 
 on property:init.svc.surfaceflinger=stopped
