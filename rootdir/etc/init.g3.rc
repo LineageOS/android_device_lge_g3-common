@@ -474,12 +474,6 @@ service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -n
     group bluetooth net_bt_admin misc net_bt_stack
     disabled
 
-service bnrd /system/bin/bnrd
-    class main
-    socket bnrd stream 660 root system
-    user root
-    group system radio sdcard_rw
-
 service bridgemgrd /system/bin/bridgemgrd
     class late_start
     user radio
@@ -659,16 +653,6 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ipsecclient /system/bin/ipsecclient
-    class main
-    group system net_admin net_raw
-    disabled
-
-service ipsecstarter /system/bin/ipsecstarter
-    class main
-    user system
-    group system net_admin net_raw
-
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
@@ -793,11 +777,6 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
-service qgesturesvr /system/bin/mm-gesture-daemon
-    class late_start
-    user system
-    group system camera input graphics net_bt_stack
-
 service qcom-c_core-sh /system/bin/sh /init.galbi.class_core.sh
     class core
     user root
@@ -897,11 +876,6 @@ service time_daemon /system/bin/time_daemon
    user root
    group root
 
-service ufips /system/bin/ufips
-    class core
-    user system
-    group system
-
 service usbdebug-manager /system/bin/usbdebug-manager
     class late_start
     user root
@@ -957,12 +931,6 @@ service wcnss-service /system/bin/wcnss_service
     class main
     user root
     group system wifi qcom_diag radio
-    oneshot
-
-service write_event_log /system/bin/write_event_log 55000
-    user system
-    group system
-    disabled
     oneshot
 
 service wifi-crda /system/bin/sh /system/etc/init.crda.sh
@@ -1046,9 +1014,6 @@ on property:hw.ftm_ptt_start=1
 
 on property:hw.ftm_ptt_start=0
     stop ftm_ptt
-
-on property:init.svc.bootanim=stopped
-    start write_event_log
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
