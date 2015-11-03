@@ -261,6 +261,10 @@ on boot
     chown system system /sys/class/leds/red/time_on_off
     chmod 0664 /sys/class/leds/red/time_on_off
 
+    # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+
 on post-fs-data
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
