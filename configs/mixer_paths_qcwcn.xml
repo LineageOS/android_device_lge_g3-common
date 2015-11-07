@@ -294,9 +294,16 @@
     <ctl name="RX7 HPF cut off" value="MIN_3DB_150Hz" />
     <ctl name="SLIM_0_RX Format" value="S16_LE" />
     <ctl name="SLIM_0_RX SampleRate" value="KHZ_48" />
+    <ctl name="SLIM_0_RX AANC MUX" value="ZERO" />
+    <ctl name="ANC Function" value="OFF" />
+    <ctl name="ANC Slot" value="0" />
+    <ctl name="ANC1 MUX" value="ZERO" />
+    <ctl name="ANC2 MUX" value="ZERO" />
+    <ctl name="ANC1 FB MUX" value="ZERO" />
+    <ctl name="Speaker Protection" value="Off" />
+    <ctl name="MultiMedia1 Mixer QUAT_MI2S_TX" value="0" />
     <ctl name="EC_REF_RX" value="NONE" />
     <ctl name="SPK Amp Volume" value="2" />
-    <ctl name="SPK Amp CLK" value="Off" />
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="deep-buffer-playback">
@@ -378,6 +385,11 @@
 
     <path name="low-latency-playback transmission-fm">
         <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia5" value="1" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-and-speaker">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback" />
     </path>
 
     <path name="multi-channel-playback hdmi">
@@ -764,18 +776,16 @@
     </path>
 
     <path name="speaker">
-        <path name="fb-protection" />
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
-        <ctl name="RX3 Digital Volume" value="66" />
-        <ctl name="RX4 Digital Volume" value="66" />
+        <ctl name="RX3 Digital Volume" value="60" />
+        <ctl name="RX4 Digital Volume" value="60" />
         <ctl name="RDAC5 MUX" value="DEM3_INV" />
         <ctl name="LINEOUT1 Volume" value="16" />
         <ctl name="LINEOUT3 Volume" value="16" />
         <ctl name="RX3 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="SPK Amp Volume" value="3" />
-        <ctl name="SPK Amp CLK" value="On" />
     </path>
 
     <path name="fake_speaker">
@@ -804,7 +814,7 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
-        <ctl name="RX1 Digital Volume" value="66" />
+        <ctl name="RX1 Digital Volume" value="60" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="DAC1 Switch" value="1" />
     </path>
@@ -850,8 +860,8 @@
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHL Volume" value="20" />
         <ctl name="HPHR Volume" value="20" />
-        <ctl name="RX1 Digital Volume" value="60" />
-        <ctl name="RX2 Digital Volume" value="60" />
+        <ctl name="RX1 Digital Volume" value="54" />
+        <ctl name="RX2 Digital Volume" value="54" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
 
@@ -942,8 +952,8 @@
 
     <path name="voice-speaker">
         <path name="speaker" />
-        <ctl name="RX3 Digital Volume" value="66" />
-        <ctl name="RX4 Digital Volume" value="66" />
+        <ctl name="RX3 Digital Volume" value="60" />
+        <ctl name="RX4 Digital Volume" value="60" />
         <ctl name="RDAC5 MUX" value="DEM3_INV" />
         <ctl name="LINEOUT1 Volume" value="20" />
         <ctl name="LINEOUT3 Volume" value="20" />
@@ -987,7 +997,6 @@
     </path>
 
     <path name="speaker-and-headphones">
-        <path name="fb-protection" />
         <path name="headphones" />
         <ctl name="COMP1 Switch" value="0" />
         <ctl name="HPHL Volume" value="12" />
@@ -1003,7 +1012,6 @@
         <ctl name="LINEOUT3 Volume" value="16" />
         <ctl name="RX3 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="SPK Amp Volume" value="3" />
-        <ctl name="SPK Amp CLK" value="On" />
     </path>
 
     <path name="usb-headphones">
@@ -1115,21 +1123,23 @@
         <ctl name="ADC1 Volume" value="12" />
         <ctl name="DEC6 Volume" value="67" />
     </path>
-     
+
     <path name="headset-mic-vr">
         <path name="adc2" />
-	<ctl name="DEC5 Volume" value="62" />
-	<ctl name="ADC2 Volume" value="12" />
+        <ctl name="DEC5 Volume" value="62" />
+        <ctl name="ADC2 Volume" value="12" />
     </path>
-    
+
     <path name="submic-1">
         <path name="adc5" />
         <ctl name="ADC5 Volume" value="12" />
         <ctl name="DEC2 Volume" value="60" />
     </path>
- 
+
     <path name="submic-2">
         <path name="adc3" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="DEC4 Volume" value="60" />
     </path>
 
     <path name="voice-memo-8K">
