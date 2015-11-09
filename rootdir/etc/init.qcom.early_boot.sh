@@ -1,4 +1,5 @@
-# Copyright (c) 2009-2012, The Linux Foundation. All rights reserved.
+#!/system/bin/sh
+# Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -25,36 +26,41 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#cockoo140127
-on boot
-    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwake
-    chown bluetooth net_bt_stack /proc/bluetooth/sleep/proto
-    chown bluetooth bluetooth /proc/bluetooth/sleep/lpm
-    chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite
-    chown system system /sys/module/sco/parameters/disable_esco
-    chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
-    chmod 0660 /sys/module/bluetooth_power/parameters/power
-    chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-    chmod 0660 /proc/bluetooth/sleep/btwake
-    chmod 0660 /proc/bluetooth/sleep/proto
-    chmod 0660 /proc/bluetooth/sleep/lpm
-    chmod 0660 /proc/bluetooth/sleep/btwrite
-    chown bluetooth net_bt_stack /dev/ttyHS99
-    chmod 0660 /sys/module/hci_uart/parameters/ath_lpm
-    chmod 0660 /sys/module/hci_uart/parameters/ath_btwrite
-    chmod 0660 /dev/ttyHS99
-    chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
-    chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
+export PATH=/system/bin
 
-    # Feature chip vendor : qct
-    setprop bluetooth.chip.vendor qcom
+case "$1" in
+    "msm8974")
+        setprop ro.sf.lcd_density 320
+        ;;
+esac
 
-on property:bluetooth.sap.status=running
-    start bt-sap
-
-on property:bluetooth.sap.status=stopped
-    stop bt-sap
+# Setup HDMI related nodes & permissions
+# HDMI can be fb1 or fb2
+# Loop through the sysfs nodes and determine
+# the HDMI(dtv panel)
+for fb_cnt in 0 1 2
+do
+file=/sys/class/graphics/fb$fb_cnt
+dev_file=/dev/graphics/fb$fb_cnt
+  if [ -d "$file" ]
+  then
+    value=`cat $file/msm_fb_type`
+    case "$value" in
+            "dtv panel")
+        chown -h system.graphics $file/hpd
+        chown -h system.system $file/hdcp/tp
+        chown -h system.graphics $file/vendor_name
+        chown -h system.graphics $file/product_description
+        chmod -h 0664 $file/hpd
+        chmod -h 0664 $file/hdcp/tp
+        chmod -h 0664 $file/vendor_name
+        chmod -h 0664 $file/product_description
+        chmod -h 0664 $file/video_mode
+        chmod -h 0664 $file/format_3d
+        # create symbolic link
+        ln -s $dev_file /dev/graphics/hdmi
+        # Change owner and group for media server and surface flinger
+        chown -h system.system $file/format_3d;;
+    esac
+  fi
+done

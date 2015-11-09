@@ -32,22 +32,25 @@
 start_sensors()
 {
     if [ -c /dev/msm_dsps -o -c /dev/sensors ]; then
-        mkdir -p /data/system/sensors
-        touch /data/system/sensors/settings
-        chmod 775 /data/system/sensors
-        chmod 664 /data/system/sensors/settings
-        chown system /data/system/sensors/settings
+        chmod -h 775 /persist/sensors
+        chmod -h 664 /persist/sensors/sensors_settings
+        chown -h system.root /persist/sensors/sensors_settings
 
         mkdir -p /data/misc/sensors
-        chmod 775 /data/misc/sensors
+        chmod -h 775 /data/misc/sensors
 
-        if [ ! -s /data/system/sensors/settings ]; then
-            # If the settings file is empty, enable sensors HAL
-            # Otherwise leave the file with it's current contents
-            echo 1 > /data/system/sensors/settings
-        fi
         start sensors
     fi
 }
+
+#
+# Suppress default route installation during RA for IPV6; user space will take
+# care of this
+# exception default ifc
+for file in /proc/sys/net/ipv6/conf/*
+do
+  echo 0 > $file/accept_ra_defrtr
+done
+echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
 
 start_sensors
