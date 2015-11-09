@@ -1,5 +1,6 @@
 #!/system/bin/sh
-# Copyright (c) 2012, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012, Code Aurora Forum. All rights reserved.
+# Copyright (c) 2012, LG Electronics Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -10,7 +11,7 @@
 #       copyright notice, this list of conditions and the following
 #       disclaimer in the documentation and/or other materials provided
 #       with the distribution.
-#     * Neither the name of The Linux Foundation nor the names of its
+#     * Neither the name of Code Aurora Forum, Inc. nor the names of its
 #       contributors may be used to endorse or promote products derived
 #      from this software without specific prior written permission.
 #
@@ -26,135 +27,41 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+
 #
-# Update USB serial number from persist storage if present, if not update
-# with value passed from kernel command line, if none of these values are
-# set then use the default value. This order is needed as for devices which
-# do not have unique serial number.
-# User needs to set unique usb serial number to persist.usb.serialno
+# Allow unique persistent serial numbers for devices connected via usb
+# User needs to set unique usb serial number to persist.usb.serialno and
+# if persistent serial number is not set then Update USB serial number if
+# passed from command line
 #
 serialno=`getprop persist.usb.serialno`
 case "$serialno" in
     "")
     serialnum=`getprop ro.serialno`
     case "$serialnum" in
-        "");; #Do nothing, use default serial number
-        *)
+        "") ;;
+        * )
         echo "$serialnum" > /sys/class/android_usb/android0/iSerial
+        ;;
     esac
     ;;
-    *)
+    * )
     echo "$serialno" > /sys/class/android_usb/android0/iSerial
 esac
 
-chown root.system /sys/devices/platform/msm_hsusb/gadget/wakeup
-chmod 220 /sys/devices/platform/msm_hsusb/gadget/wakeup
+echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
+echo 1  > /sys/class/android_usb/f_cdrom_storage/lun/nofua
 
-#
-# Allow persistent usb charging disabling
-# User needs to set usb charging disabled in persist.usb.chgdisabled
-#
-target=`getprop ro.board.platform`
-usbchgdisabled=`getprop persist.usb.chgdisabled`
-case "$usbchgdisabled" in
-    "") ;; #Do nothing here
-    * )
-    case $target in
-        "msm8660")
-        echo "$usbchgdisabled" > /sys/module/pmic8058_charger/parameters/disabled
-        echo "$usbchgdisabled" > /sys/module/smb137b/parameters/disabled
-	;;
-        "msm8960")
-        echo "$usbchgdisabled" > /sys/module/pm8921_charger/parameters/disabled
-	;;
-    esac
-esac
-
-usbcurrentlimit=`getprop persist.usb.currentlimit`
-case "$usbcurrentlimit" in
-    "") ;; #Do nothing here
-    * )
-    case $target in
-        "msm8960")
-        echo "$usbcurrentlimit" > /sys/module/pm8921_charger/parameters/usb_max_current
-	;;
-    esac
-esac
 #
 # Allow USB enumeration with default PID/VID
 #
-baseband=`getprop ro.baseband`
-echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 usb_config=`getprop persist.sys.usb.config`
 case "$usb_config" in
-    "" | "adb") #USB persist config not set, select default configuration
-        case $target in
-            "apq8084")
-                setprop persist.sys.usb.config diag,adb
-                ;;
-            "msm8960" | "msm8974" | "msm8226" | "msm8610")
-                case "$baseband" in
-                    "mdm")
-                         setprop persist.sys.usb.config diag,diag_mdm,serial_hsic,serial_tty,rmnet_hsic,mass_storage,adb
-                    ;;
-                    "sglte")
-                         setprop persist.sys.usb.config diag,diag_qsc,serial_smd,serial_tty,serial_hsuart,rmnet_hsuart,mass_storage,adb
-                    ;;
-                    "dsda")
-                         setprop persist.sys.usb.config diag,diag_mdm,diag_qsc,serial_hsic,serial_hsuart,rmnet_hsic,rmnet_hsuart,mass_storage,adb
-                    ;;
-                    *)
-                         setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
-                    ;;
-                esac
-            ;;
-            "msm7627a")
-                setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet_smd,mass_storage,adb
-            ;;
-            * )
-                case "$baseband" in
-                    "svlte2a")
-                         setprop persist.sys.usb.config diag,diag_mdm,serial_sdio,serial_smd,rmnet_smd_sdio,mass_storage,adb
-                    ;;
-                    "csfb")
-                         setprop persist.sys.usb.config diag,diag_mdm,serial_sdio,serial_tty,rmnet_sdio,mass_storage,adb
-                    ;;
-                    *)
-                         setprop persist.sys.usb.config diag,serial_tty,serial_tty,rmnet_smd,mass_storage,adb
-                    ;;
-                esac
-            ;;
-        esac
+    "") # USB persist config not set, select default configuration
+    setprop persist.sys.usb.config auto_conf
     ;;
-    * ) ;; #USB persist config exists, do nothing
-esac
-
-#
-# Add support for exposing lun0 as cdrom in mass-storage
-#
-target=`getprop ro.product.device`
-cdromname="/system/etc/cdrom_install.iso"
-cdromenable=`getprop persist.service.cdrom.enable`
-case "$target" in
-        "msm7627a")
-                case "$cdromenable" in
-                        0)
-                                echo "" > /sys/class/android_usb/android0/f_mass_storage/lun0/file
-                                ;;
-                        1)
-                                echo "mounting usbcdrom lun"
-                                echo $cdromname > /sys/class/android_usb/android0/f_mass_storage/lun0/file
-                                ;;
-                esac
-                ;;
-esac
-
-#
-# Select USB BAM - 2.0 or 3.0
-#
-case "$target" in
-    "msm8974")
-        echo ssusb > /sys/bus/platform/devices/usb_bam/enable
+    "adb")
+    setprop persist.sys.usb.config auto_conf,adb
     ;;
+    * ) ;; # USB persist config exists, do nothing
 esac
-
