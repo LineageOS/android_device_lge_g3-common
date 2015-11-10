@@ -119,6 +119,3 @@ BOARD_RIL_CLASS := ../../../device/lge/g3-common/ril/
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
-
-# Time services
-BOARD_USES_QC_TIME_SERVICES := true

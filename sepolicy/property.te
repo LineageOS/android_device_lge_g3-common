@@ -1,2 +1,3 @@
 type baseband_prop, property_type;
 type camera_prop, property_type;
+type timekeep_prop, property_type;
