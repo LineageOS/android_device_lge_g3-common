@@ -19,3 +19,4 @@
  
 /system/bin/tune2fs                 u:object_r:tune2fs_exec:s0
 /system/bin/thermanager             u:object_r:thermanager_exec:s0
+/system/bin/timekeep                u:object_r:timekeep_exec:s0
