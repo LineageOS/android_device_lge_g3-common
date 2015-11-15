@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f2f7f8d_608fa5cc",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-11-15T17:50:13Z",
+      "side": 1,
+      "message": "s#vendor/lge/g3-common/proprietary/##g :)",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 206,
+        "endChar": 61
+      },
+      "revId": "68df0c182b2cdce03fb35a4943cef29f96e335cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
