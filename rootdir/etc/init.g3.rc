@@ -366,6 +366,12 @@ service audiod /system/bin/audiod
    user system
    group system
 
+service hwaddrs /system/bin/hwaddrs
+    class core
+    user root
+    group system
+    oneshot
+
 service bridgemgrd /system/bin/bridgemgrd
     class late_start
     user radio
