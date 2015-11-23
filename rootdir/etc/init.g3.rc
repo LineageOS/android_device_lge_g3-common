@@ -463,10 +463,10 @@ service battery_monitor /system/bin/battery_monitor
     group system
     disabled
 
-service bdaddr_loader /system/bin/bdaddr_loader
+service hwaddrs /system/bin/hwaddrs
+    class core
     user root
-    group bluetooth net_bt_admin misc net_bt_stack
-    disabled
+    group system
     oneshot
 
 service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -n
