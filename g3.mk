@@ -89,7 +89,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    bdAddrLoader
+    hwaddrs
 
 # BoringSSL compatability wrapper
 PRODUCT_PACKAGES += \
