@@ -26,6 +26,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# grep the modem partition for baseband version and set it
+setprop gsm.version.baseband `strings /dev/block/platform/msm_sdcc.1/by-name/modem 2>/dev/null | grep -m 1 "^MPSS.DI."`
+
 #
 # Suppress default route installation during RA for IPV6; user space will take
 # care of this
