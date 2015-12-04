@@ -1,6 +1,6 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true
+    media.aac_51_output_enabled=true \
     av.offload.enable=false
 
 PRODUCT_PROPERTY_OVERRIDES += \

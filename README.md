@@ -1,6 +1,7 @@
 Copyright 2014 - The CyanogenMod Project
 
 Device configuration for LG G3.
+DualSIM variants incuded(LG G3 D856/7/8/9)
 =====================================
 
 Basic   | Spec Sheet
