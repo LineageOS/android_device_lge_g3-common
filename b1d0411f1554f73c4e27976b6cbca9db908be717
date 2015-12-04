@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_5b9e1408",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2015-12-04T22:40:52Z",
+      "side": 1,
+      "message": "this seems unnecessary/redundant",
+      "range": {
+        "startLine": 4,
+        "startChar": 17,
+        "endLine": 4,
+        "endChar": 24
+      },
+      "revId": "b1d0411f1554f73c4e27976b6cbca9db908be717",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_7ba3d850",
+        "filename": "rootdir/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2015-12-04T22:40:52Z",
+      "side": 1,
+      "message": "extra line?",
+      "revId": "b1d0411f1554f73c4e27976b6cbca9db908be717",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_3b8550ae",
+        "filename": "system_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2015-12-04T22:40:52Z",
+      "side": 1,
+      "message": "this could/should probably be done in a different commit since its not really related to the dual-sim addition",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 31
+      },
+      "revId": "b1d0411f1554f73c4e27976b6cbca9db908be717",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
