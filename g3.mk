@@ -190,6 +190,12 @@ PRODUCT_PACKAGES += \
     init.galbi.usb.sh \
     ueventd.g3.rc
 
+#Dual-SIM variants init scripts
+ifneq ($(filter d856 d857 d858 d859, $(TARGET_DEVICE)),)
+PRODUCT_PACKAGES += \
+   init.galbi.class_main.sh
+endif
+
 # RIL symbols
 PRODUCT_PACKAGES += \
     liblge
