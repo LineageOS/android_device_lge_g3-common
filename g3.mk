@@ -107,6 +107,12 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
+# Dual-SIM init script
+ifneq ($(filter d856 d857 d858 d859, $(TARGET_DEVICE)),)
+PRODUCT_PACKAGES += \
+   init.galbi.class_dualsim.sh
+endif
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8974
