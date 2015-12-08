@@ -28,6 +28,12 @@
 
 export PATH=/system/bin
 
+if [ -e /sys/devices/msm_sdcc.2 ]; then
+  ln -s /sys/devices/msm_sdcc.2 /sys/devices/microsd
+elif [ -e /sys/devices/msm_sdcc.3 ]; then
+  ln -s /sys/devices/msm_sdcc.3 /sys/devices/microsd
+fi
+
 #if [ -f /sys/devices/soc0/hw_platform ]; then
 #    soc_hwplatform=`cat /sys/devices/soc0/hw_platform` 2> /dev/null
 #else
