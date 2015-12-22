@@ -176,6 +176,14 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libxml2
 
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_g3
+
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_g3
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g3-common
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.g3 \
