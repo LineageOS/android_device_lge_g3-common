@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f7f9b97_00f827c2",
+        "filename": "rootdir/etc/init.g3.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2015-12-23T17:01:46Z",
+      "side": 1,
+      "message": "I think that we do not use this property.",
+      "range": {
+        "startLine": 782,
+        "startChar": 41,
+        "endLine": 782,
+        "endChar": 42
+      },
+      "revId": "7da02e778ef1f605349f1d498aa1b9cde3e5b654",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
