@@ -1,0 +1,1 @@
+allow untrusted_app cir_device:chr_file { getattr open read write ioctl };
