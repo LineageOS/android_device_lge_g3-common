@@ -1,0 +1,2 @@
+allow platform_app app_data_file:file execute;
+allow platform_app cir_device:chr_file { getattr open read write ioctl };
