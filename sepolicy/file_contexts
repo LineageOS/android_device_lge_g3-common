@@ -1,3 +1,4 @@
+/data/misc/camera(/.*)?             u:object_r:camera_data_file:s0
 /data/cam_socket1                   u:object_r:camera_socket:s0
 /data/cam_socket2                   u:object_r:camera_socket:s0
 
