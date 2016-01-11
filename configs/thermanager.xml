@@ -177,16 +177,16 @@
 		<threshold>
 			<mitigation name="gpu" level="off" />
 		</threshold>
-		<threshold trigger="64000" clear="63000">
+		<threshold trigger="47000" clear="46500">
 			<mitigation name="gpu" level="1" />
 		</threshold>
-		<threshold trigger="64500" clear="63500">
+		<threshold trigger="50000" clear="47500">
 			<mitigation name="gpu" level="2" />
 		</threshold>
-		<threshold trigger="65000" clear="64000">
+		<threshold trigger="53000" clear="50500">
 			<mitigation name="gpu" level="3" />
 		</threshold>
-		<threshold trigger="66000" clear="64500">
+		<threshold trigger="56000" clear="53500">
 			<mitigation name="gpu" level="4" />
 		</threshold>
 	</configuration>
@@ -237,25 +237,25 @@
 		<threshold>
 			<mitigation name="cpu" level="off" />
 		</threshold>
-		<threshold trigger="63500" clear="62500">
+		<threshold trigger="45000" clear="44000">
 			<mitigation name="cpu" level="3" />
 		</threshold>
-		<threshold trigger="64000" clear="63000">
+		<threshold trigger="47000" clear="45500">
 			<mitigation name="cpu" level="6" />
 		</threshold>
-		<threshold trigger="64500" clear="63500">
+		<threshold trigger="49000" clear="47500">
 			<mitigation name="cpu" level="8" />
 		</threshold>
-		<threshold trigger="65000" clear="64000">
+		<threshold trigger="51000" clear="49500">
 			<mitigation name="cpu" level="10" />
 		</threshold>
-		<threshold trigger="66000" clear="64500">
+		<threshold trigger="53000" clear="51500">
 			<mitigation name="cpu" level="11" />
 		</threshold>
-		<threshold trigger="69000" clear="65500">
+		<threshold trigger="55000" clear="53500">
 			<mitigation name="cpu" level="12" />
 		</threshold>
-		<threshold trigger="75000" clear="67500">
+		<threshold trigger="57000" clear="55500">
 			<mitigation name="cpu" level="13" />
 		</threshold>
 	</configuration>
