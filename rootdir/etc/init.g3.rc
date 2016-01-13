@@ -387,14 +387,13 @@ service mpdecision /system/bin/mpdecision --avg_comp
     group system readproc
     disabled
 
-service thermal-engine /system/bin/thermal-engine
-   class main
-   user root
-   group root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    seclabel u:r:thermanager:s0
+    class late_start
+    user root
+    group root
+    
 service time_daemon /system/bin/time_daemon
    class late_start
    user root
