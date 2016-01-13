@@ -579,10 +579,12 @@ service sensors /system/bin/sensors.qcom
     group root
     disabled
 
-service thermal-engine /system/bin/thermal-engine
-   class main
-   user root
-   group root
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    seclabel u:r:thermanager:s0
+    class late_start
+    user root
+    group root
 
 service time_daemon /system/bin/time_daemon
    class late_start
