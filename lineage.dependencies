@@ -8,6 +8,10 @@
     "target_path": "device/qcom/common"
   },
   {
+    "repository": "android_hardware_sony_thermanager",
+    "target_path": "hardware/sony/thermanager"
+  },
+  {
     "repository": "android_packages_apps_FlipFlap",
     "target_path": "packages/apps/FlipFlap"
   }
