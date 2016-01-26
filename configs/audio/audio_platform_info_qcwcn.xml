@@ -6,9 +6,9 @@
         <device name="SND_DEVICE_OUT_AFE_PROXY" acdb_id="20" />
 
         <!-- Input devices -->
-        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="63" />
-        <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" acdb_id="8" />
         <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="59" />
+        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="63" />
+        <device name="SND_DEVICE_IN_HEADSET_MIC" acdb_id="66" />
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="62" />
     </acdb_ids>
 
@@ -28,7 +28,8 @@
 
         <!-- Input devices -->
         <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="camcorder-0" />
-        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="voice-memo" />
+        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="voice-memo" /> <!-- CM: audio-record handset -->
+        <device name="SND_DEVICE_IN_HEADSET_MIC" alias="headset-voice-memo" /> <!-- CM: audio-record headset -->
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" alias="handset-mic-vr" />
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" alias="voice-speaker-dmic-ef-nxp" /> <!-- CM: voice-call speaker -->
     </device_names>
