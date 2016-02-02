@@ -1,7 +1,12 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
-    use.voice.path.for.pcm.voip=true
+    use.voice.path.for.pcm.voip=true \
+    audio.offload.24bit.enable=true \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.gapless.enabled=false \
+    audio.offload.multiple.enabled=false \
+    audio.offload.pcm.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
