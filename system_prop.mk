@@ -1,5 +1,10 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.24bit.enable=true \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.gapless.enabled=false \
+    audio.offload.multiple.enabled=false \
+    audio.offload.pcm.enable=true \
     media.aac_51_output_enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
