@@ -206,6 +206,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
 
     if (id == 0 && is4k(params)) {
         params.set("preview-format", "yuv420sp");
+        params.set("video-snapshot-supported", "false");
     }
 
     /* LIE! The camera will set 3 snaps when doing HDR, and only return one. This hangs apps
@@ -451,6 +452,7 @@ static int camera_start_recording(struct camera_device *device)
     parameters.unflatten(android::String8(camera_get_parameters(device)));
     if (CAMERA_ID(device) == 0 && is4k(parameters)) {
         parameters.set("preview-format", "nv12-venus");
+        parameters.set("picture-size", "4160x2340");
     }
     camera_set_parameters(device, strdup(parameters.flatten().string()));
 
