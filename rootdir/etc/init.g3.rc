@@ -338,10 +338,17 @@ service hwaddrs /system/bin/hwaddrs
     group system
     oneshot
 
+service btinit-sh /system/bin/sh /system/bin/sh /init.qcom.bt.sh
+    class core
+    user root
+    oneshot
+    disabled
+
 # Running hwaddrs under init is enforcing 0600, we need more
 on property:init.svc.hwaddrs=stopped
     chmod 644 /data/misc/wifi/config
     chmod 644 /data/misc/bluetooth/bdaddr
+    start btinit-sh
 
 # --> init.target.rc <--
 service qcamerasvr /system/bin/mm-qcamera-daemon
