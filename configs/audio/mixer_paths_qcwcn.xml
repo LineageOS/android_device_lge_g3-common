@@ -900,6 +900,7 @@
         <ctl name="RX1 Digital Volume" value="54" />
         <ctl name="RX2 Digital Volume" value="54" />
         <ctl name="COMP1 Switch" value="1" />
+        <ctl name="DAC1 Switch" value="1" />
     </path>
 
     <path name="headphones-advanced">
