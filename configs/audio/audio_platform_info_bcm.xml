@@ -28,8 +28,8 @@
         <device name="SND_DEVICE_OUT_VOIP_HEADPHONES" alias="voip-headphones" />
 
         <!-- Input devices -->
-        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="voice-memo" />
         <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="camcorder-0" />
+        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="voice-memo" />
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" alias="handset-mic-vr" />
     </device_names>
 </audio_platform_info>
