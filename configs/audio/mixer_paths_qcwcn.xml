@@ -305,7 +305,6 @@
     <ctl name="RX7 HPF cut off" value="MIN_3DB_150Hz" />
     <ctl name="SLIM_0_RX Format" value="S16_LE" />
     <ctl name="SLIM_0_RX SampleRate" value="KHZ_48" />
-
     <ctl name="EC_REF_RX" value="NONE" />
     <ctl name="SPK Amp Volume" value="2" />
     <ctl name="SPK Amp CLK" value="Off" />
@@ -930,6 +929,7 @@
         <ctl name="RX1 Digital Volume" value="60" />
         <ctl name="RX2 Digital Volume" value="60" />
     </path>
+
     <path name="headset-mic">
         <path name="adc2" />
         <ctl name="DEC5 Volume" value="60" />
@@ -1094,6 +1094,7 @@
         <ctl name="RX1 Digital Volume" value="57" />
         <ctl name="RX2 Digital Volume" value="57" />
     </path>
+
     <path name="headphone-24bit-96khz">
         <path name="headphones" />
         <ctl name="HPHL Volume" value="20" />
@@ -1247,8 +1248,10 @@
 
     <path name="bt-sco-mic-nrec">
     </path>
+
     <path name="bt-sco-mic-nrec-wb">
     </path>
+
     <!-- Dual MIC devices -->
     <path name="default-dmic-endfire">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
