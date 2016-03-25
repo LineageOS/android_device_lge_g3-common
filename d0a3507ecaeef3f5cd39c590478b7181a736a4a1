@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_1b189e1b",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2016-03-25T01:20:17Z",
+      "side": 0,
+      "message": "Did you mean to include this?  The change doesn\u0027t make a difference for me so I\u0027m not sure if this needs to be decommonized.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 25
+      },
+      "revId": "d0a3507ecaeef3f5cd39c590478b7181a736a4a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
