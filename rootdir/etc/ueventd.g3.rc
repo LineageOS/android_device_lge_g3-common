@@ -188,11 +188,10 @@
 /dev/uio1                 0660   system     system
 /dev/uio2                 0660   system     system
 
-# LGC_BT_COMMON_IMP_MOS_V4L2
-/dev/radio0               0666   root       root
-
 # SSR devices
 /dev/subsys_*             0640   system     system
 
 # TDMB
 /dev/broadcast0           0660   media      media
+
+/dev/rfkill               0660   wifi       wifi
