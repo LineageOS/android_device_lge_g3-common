@@ -51,6 +51,9 @@ ifeq ($(filter d852, $(TARGET_DEVICE)),)
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 endif
 
+# Images signing
+PRODUCT_PRIVATE_KEY := 41a9e467744d1d1ba429f2ecea655279
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
