@@ -610,6 +610,9 @@ on property:sys.boot_completed=1
     # increase read ahead cache size
     echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
 
+    # enable slimport
+    write /sys/devices/f9967000.i2c/i2c-0/0-0072/enable_irq 1
+
     setprop ro.qualcomm.perf.cores_online 2
     start mpdecision
 
