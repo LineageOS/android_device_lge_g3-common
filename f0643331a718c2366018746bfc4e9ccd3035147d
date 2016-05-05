@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_a3da5fe6",
+        "filename": "camera/CameraWrapper.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-05-05T13:45:21Z",
+      "side": 1,
+      "message": "while you\u0027re in here, move these null checks above the log which derefs the potentially null pointer",
+      "revId": "f0643331a718c2366018746bfc4e9ccd3035147d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
