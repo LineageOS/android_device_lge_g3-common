@@ -22,12 +22,16 @@ ifeq ($(TARGET_REQUIRES_BUMP),true)
 endif
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
+LZMA_RECOVERY_RAMDISK := $(PRODUCT_OUT)/ramdisk-lzma.img
+
+$(LZMA_RECOVERY_RAMDISK): $(BUILT_RAMDISK_TARGET)
+	gunzip -f < $(BUILT_RAMDISK_TARGET) | lzma -9 > $@
+
 ## Overload recoveryimg generation: Same as the original, + --dt arg
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
-		$(recovery_ramdisk) \
+		$(LZMA_RECOVERY_RAMDISK) \
 		$(recovery_kernel)
-	$(call build-recoveryimage-target, $@)
-	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@
+	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@ --ramdisk $(LZMA_RECOVERY_RAMDISK)
 ifeq ($(TARGET_REQUIRES_BUMP),true)
 	$(hide) $(BUMP) $@ $@
 endif
