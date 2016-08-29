@@ -106,8 +106,8 @@ PRODUCT_PACKAGES += \
     Gello
 
 # GPS
-PRODUCT_PACKAGES += \
-    gps.msm8974
+#PRODUCT_PACKAGES += \
+#    gps.msm8974
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
