@@ -103,6 +103,7 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
 BOARD_RIL_CLASS += ../../../device/lge/g3-common/ril
+TARGET_RIL_VARIANT := caf
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
