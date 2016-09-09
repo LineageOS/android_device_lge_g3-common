@@ -51,6 +51,10 @@ ifeq ($(filter d852, $(TARGET_DEVICE)),)
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 endif
 
+# Assertive Display
+PRODUCT_COPY_FILES += \
+    device/lge/g3-common/configs/ad/ad_calib.cfg:system/etc/ad_calib.cfg
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
