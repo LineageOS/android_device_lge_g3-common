@@ -1,3 +1,8 @@
+# Assertive Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qcom.ad=1 \
+    ro.qcom.ad.calib.data=/system/etc/ad_calib.cfg
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
