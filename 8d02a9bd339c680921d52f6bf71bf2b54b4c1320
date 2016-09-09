@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_233bb8eb",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 15325
+      },
+      "writtenOn": "2016-09-09T00:32:55Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be deleted too?",
+      "revId": "8d02a9bd339c680921d52f6bf71bf2b54b4c1320",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
