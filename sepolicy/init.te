@@ -1,3 +1,5 @@
 allow init sysfs_tap2wake:file setattr;
 allow init sysfs_vibe:file getattr;
 allow init tune2fs_exec:file { open read getattr execute };
+allow init tmpfs:lnk_file create;
+allow init socket_device:sock_file { create setattr }; # ToDo: thermal-send-client
