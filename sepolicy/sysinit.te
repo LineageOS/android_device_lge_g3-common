@@ -1,0 +1,2 @@
+allow sysinit toolbox_exec:file { open read getattr execute };
+allow sysinit system_file:dir { open read };
