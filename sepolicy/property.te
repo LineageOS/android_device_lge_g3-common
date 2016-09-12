@@ -1,1 +1,4 @@
 type baseband_prop, property_type;
+
+#Needed for reading the baseband
+allow property_type tmpfs:file { read };

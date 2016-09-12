@@ -5,3 +5,6 @@ type tune2fs_exec, exec_type, file_type;
 init_daemon_domain(tune2fs)
 
 allow tune2fs userdata_block_device:blk_file { open read write getattr ioctl };
+
+# /proc/swaps
+allow tune2fs proc:file { open read getattr };

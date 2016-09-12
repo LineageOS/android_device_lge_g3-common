@@ -1,7 +1,7 @@
 allow qti_init_shell baseband_prop:property_service set;
 allow qti_init_shell bluetooth_data_file:dir search;
 allow qti_init_shell bluetooth_data_file:file { read open };
-allow qti_init_shell misc_partition:blk_file { open read };
+allow qti_init_shell misc_block_device:blk_file { open read };
 allow qti_init_shell modem_block_device:blk_file { open read };
 allow qti_init_shell qmuxd:unix_stream_socket { connectto };
 allow qti_init_shell qmuxd_socket:dir { add_name write };
