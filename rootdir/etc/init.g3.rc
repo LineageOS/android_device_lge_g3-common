@@ -338,7 +338,6 @@ service baseband-sh /system/bin/sh /init.baseband.sh
     class late_start
     user root
     oneshot
-    disabled
 
 service hwaddrs /system/bin/hwaddrs
     class core
@@ -515,9 +514,6 @@ on property:ro.boot.emmc=true
 
 on property:vold.decrypt=trigger_restart_framework
     start sensors
-
-on property:gsm.version.baseband=""
-    start baseband-sh
 
 on property:sys.boot_completed=1
     # enable slimport
