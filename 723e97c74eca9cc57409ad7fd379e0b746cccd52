@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_2dc05e7b",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8084
+      },
+      "writtenOn": "2016-09-23T15:20:43Z",
+      "side": 1,
+      "message": "i think that cppflags isn\u0027t need\nhttps://github.com/CyanogenMod/android_build/blob/cm-13.0/core/config.mk#L135",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 46
+      },
+      "revId": "723e97c74eca9cc57409ad7fd379e0b746cccd52",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
