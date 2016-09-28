@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_f6a76ebc",
+        "filename": "sepolicy/property.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2016-09-28T14:11:55Z",
+      "side": 1,
+      "message": "I don\u0027t think that we should do this. From which denial have you derived it?",
+      "range": {
+        "startLine": 4,
+        "startChar": 33,
+        "endLine": 4,
+        "endChar": 37
+      },
+      "revId": "d42dbba06c0d05b484194a04dcbfb3350f0dafef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
