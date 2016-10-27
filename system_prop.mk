@@ -17,6 +17,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bluetooth.soc=smd \
+    ro.qualcomm.bt.hci_transport=smd \
     ro.bt.bdaddr_path="/data/misc/bluetooth/bdaddr"
 
 # Display
