@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff2e2bb8_d457fc01",
+        "filename": "sepolicy/netmgrd.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2016-10-30T16:56:22Z",
+      "side": 1,
+      "message": "This is bad. I couldn\u0027t find the related path yet. If someone knows how to apply filters with Android\u0027s implementation please tell me.",
+      "range": {
+        "startLine": 1,
+        "startChar": 42,
+        "endLine": 1,
+        "endChar": 43
+      },
+      "revId": "f850494872683b1fc237b7c24ea3871fdf9c68e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
