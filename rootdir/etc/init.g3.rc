@@ -340,7 +340,7 @@ service baseband-sh /system/bin/sh /init.baseband.sh
 service hwaddrs /system/bin/hwaddrs
     class core
     user root
-    group system
+    group bluetooth wifi
     oneshot
 
 service btinit-sh /system/bin/sh /init.qcom.bt.sh
