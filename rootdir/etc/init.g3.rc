@@ -329,10 +329,10 @@ on post-fs-data
 # Services start here
 #
 
-service charger /sbin/healthd -c
+service charger /charger
     class charger
     critical
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service baseband-sh /vendor/bin/sh /vendor/bin/init.baseband.sh
     class late_start
