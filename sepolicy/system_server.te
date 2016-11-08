@@ -1,2 +1,3 @@
+allow system_server baseband_prop:file read;
 allow system_server cir_device:chr_file { rw_file_perms ioctl };
 allow system_server sysfs_tap2wake:file rw_file_perms;
