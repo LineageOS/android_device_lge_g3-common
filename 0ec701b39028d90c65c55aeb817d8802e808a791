@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_58bcebba",
+        "filename": "configs/audio/audio_platform_info_qcwcn.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-11-29T22:43:07Z",
+      "side": 0,
+      "message": "Why was this removed?",
+      "revId": "0ec701b39028d90c65c55aeb817d8802e808a791",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
