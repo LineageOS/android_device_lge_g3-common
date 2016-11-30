@@ -16,6 +16,24 @@
       "revId": "0ec701b39028d90c65c55aeb817d8802e808a791",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f681702_58c22beb",
+        "filename": "configs/audio/audio_platform_info_qcwcn.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2016-11-30T05:47:58Z",
+      "side": 0,
+      "message": "The id for the handset mic isn\u0027t what LG is using in their blobs and for mic fluence LG uses the default id.",
+      "parentUuid": "5f681702_58bcebba",
+      "revId": "0ec701b39028d90c65c55aeb817d8802e808a791",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
