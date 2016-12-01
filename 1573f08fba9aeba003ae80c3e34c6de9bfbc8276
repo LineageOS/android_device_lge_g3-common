@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_4047cd4c",
+        "filename": "g3.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2016-12-01T18:33:57Z",
+      "side": 1,
+      "message": "double derp",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 8
+      },
+      "revId": "1573f08fba9aeba003ae80c3e34c6de9bfbc8276",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
