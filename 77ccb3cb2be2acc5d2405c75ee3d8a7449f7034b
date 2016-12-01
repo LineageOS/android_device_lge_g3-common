@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_e0f25906",
+        "filename": "overlay/packages/apps/Settings/res/values/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 15038
+      },
+      "writtenOn": "2016-12-01T19:41:24Z",
+      "side": 1,
+      "message": "derp here",
+      "revId": "77ccb3cb2be2acc5d2405c75ee3d8a7449f7034b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
