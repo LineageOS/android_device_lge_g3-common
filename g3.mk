@@ -101,6 +101,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    OneplusDoze
+
 # Gello
 PRODUCT_PACKAGES += \
     Gello
