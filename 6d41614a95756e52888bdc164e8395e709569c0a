@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_57780c29",
+        "filename": "rootdir/etc/init.g3.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 8961
+      },
+      "writtenOn": "2016-12-11T14:21:26Z",
+      "side": 1,
+      "message": "White space",
+      "revId": "6d41614a95756e52888bdc164e8395e709569c0a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
