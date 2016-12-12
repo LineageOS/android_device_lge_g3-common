@@ -84,6 +84,9 @@ on early-boot
 on boot
     mkdir /dev/socket/netmgr 0750 radio radio
 
+    # Prevents permission denied error for telephony
+    chmod 0644 /proc/cmdline
+
     # BCM
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
