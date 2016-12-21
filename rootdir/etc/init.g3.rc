@@ -331,12 +331,25 @@ service charger /charger
     critical
     seclabel u:r:charger:s0
 
+service qcom-c_core-sh /vendor/bin/sh vendor/bin/init.qcom.class_core.sh
+    class core
+    user root
+    oneshot
+
+service qcom-c_main-sh /vendor/bin/sh vendor/bin/init.class_main.sh
+    class main
+    user root
+    oneshot
+
 service baseband-sh /vendor/bin/sh /vendor/bin/init.baseband.sh
     class late_start
     user root
     seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
+
+on property:vold.decrypt=trigger_restart_framework
+    start qcom-c_main-sh
 
 service hwaddrs /vendor/bin/hwaddrs
     class core
@@ -367,6 +380,20 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
+
+service ril-daemon2 /vendor/bin/hw/rild -c 2
+    class main
+    user radio
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw oem_2950 log net_raw
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
+service ril-daemon3 /vendor/bin/hw/rild -c 3
+    class main
+    user radio
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw oem_2950 log net_raw
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 # --> init.target.rc <--
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
