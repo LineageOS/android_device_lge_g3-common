@@ -365,7 +365,7 @@ static int loc_init(GpsCallbacks* callbacks)
         for(mdm_index = 0;
             mdm_index < modem_info.num_modems;
             mdm_index++) {
-            if(modem_info.mdm_list[mdm_index].mdm_name) {
+            if((void *) modem_info.mdm_list[mdm_index].mdm_name != NULL) {
                 //Copy modem name to register with peripheral manager
                 strlcpy(loc_mdm_info.modem_name,
                         modem_info.mdm_list[mdm_index].mdm_name,
