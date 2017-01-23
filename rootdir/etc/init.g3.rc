@@ -255,6 +255,7 @@ on boot
     # Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+    write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
     chown system system /sys/class/leds/red/pattern_id
