@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_99fea46a",
+        "filename": "sepolicy/system_server.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2017-01-28T08:54:50Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow rules for unlabeled files. Or better there shouldn\u0027t be any unlabeled files all. Could you please look into which file is being accessed here?",
+      "revId": "1f3c5009a438c3092a0085ae659a457bcefa3546",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
