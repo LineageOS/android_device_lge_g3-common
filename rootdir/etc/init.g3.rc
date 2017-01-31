@@ -255,7 +255,6 @@ on boot
     # Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
-    write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
     chown system system /sys/class/leds/red/pattern_id
@@ -527,5 +526,8 @@ on property:sys.boot_completed=1
 
     # Disable LG screen sharpening
     write /sys/devices/virtual/graphics/fb0/sharpening 0
+
+    # LMK
+    write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
 
     start baseband-sh
