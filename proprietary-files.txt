@@ -110,17 +110,9 @@ etc/firmware/DLdata_rev28B_data2.ecl
 etc/firmware/DLdata_rev28B_data3.ecl
 
 # DRM
-bin/qseecomd
 vendor/lib/libdrmdecrypt.so
-vendor/lib/libdrmdiag.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/librpmb.so
-vendor/lib/libssd.so
 vendor/lib/libwvm.so
 vendor/lib/libwvdrm_L1.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libWVphoneAPI.so
 vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
@@ -168,6 +160,14 @@ vendor/lib/libmm-color-convertor.so
 # Perf
 bin/mpdecision
 vendor/lib/libqti-perfd-client.so
+
+# QSEE
+bin/qseecomd
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+vendor/lib/libQSEEComAPI.so
 
 # Qualcomm framework
 bin/irsc_util
