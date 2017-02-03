@@ -22,6 +22,30 @@
       "revId": "e11ca552f2478a10698152a360fac2fece8b29c3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_9151feda",
+        "filename": "twrp.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2017-02-03T15:57:46Z",
+      "side": 1,
+      "message": "Because I think this makes it possible to build twrp without anything else.",
+      "parentUuid": "7a288981_f14a8226",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 24
+      },
+      "revId": "e11ca552f2478a10698152a360fac2fece8b29c3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
