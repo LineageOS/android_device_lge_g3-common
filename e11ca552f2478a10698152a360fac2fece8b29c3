@@ -46,6 +46,30 @@
       "revId": "e11ca552f2478a10698152a360fac2fece8b29c3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_f1f842c6",
+        "filename": "twrp.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2017-02-03T16:42:40Z",
+      "side": 1,
+      "message": "But this is wouldn\u0027t be any different if these two lines were inside the ifeq instead of a separate file.",
+      "parentUuid": "7a288981_9151feda",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 24
+      },
+      "revId": "e11ca552f2478a10698152a360fac2fece8b29c3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
