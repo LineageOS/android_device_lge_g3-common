@@ -881,7 +881,7 @@
         <ctl name="HPHR Volume" value="20" />
         <ctl name="RX1 Digital Volume" value="60" />
         <ctl name="RX2 Digital Volume" value="60" />
-        <ctl name="COMP1 Switch" value="1" />
+        <ctl name="COMP1 Switch" value="0" />
     </path>
 
     <path name="headphones-advanced">
@@ -896,7 +896,7 @@
         <ctl name="HPHR Volume" value="20" />
         <ctl name="RX1 Digital Volume" value="57" />
         <ctl name="RX2 Digital Volume" value="57" />
-        <ctl name="COMP1 Switch" value="1" />
+        <ctl name="COMP1 Switch" value="0" />
     </path>
 
     <path name="headphones-aux">
