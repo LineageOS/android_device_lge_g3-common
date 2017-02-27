@@ -12,8 +12,6 @@ on early-init
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
 on init
-    export LD_SHIM_LIBS /system/lib/libril.so|liblge.so
-
     mkdir /persist 0771 system system
     mkdir /persist-lg 0771 system system
     mkdir /sns 0755 system system
