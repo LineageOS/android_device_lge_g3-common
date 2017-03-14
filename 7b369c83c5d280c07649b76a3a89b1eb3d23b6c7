@@ -34,6 +34,24 @@
       "revId": "7b369c83c5d280c07649b76a3a89b1eb3d23b6c7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba57610f_f2f5d5cb",
+        "filename": "rootdir/etc/init.g3.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2017-03-14T18:07:47Z",
+      "side": 0,
+      "message": "Looks like it\u0027s my fault. I\u0027ve introduced it with https://review.lineageos.org/#/c/19932/. But I don\u0027t know how this could happen, because I\u0027m sure I cherry-picked your change.",
+      "parentUuid": "ba57610f_b2babd08",
+      "revId": "7b369c83c5d280c07649b76a3a89b1eb3d23b6c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
