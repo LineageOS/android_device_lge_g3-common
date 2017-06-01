@@ -22,4 +22,4 @@
 /system/vendor/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
 /system/vendor/bin/thermal-engine                          u:object_r:thermal-engine_exec:s0
 
-/system/vendor/bin/hw/android\.hardware\.vibrator@1\.0-service\.g3 u:object_r:hal_vibrator_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.vibrator@1\.1-service\.g3 u:object_r:hal_vibrator_default_exec:s0

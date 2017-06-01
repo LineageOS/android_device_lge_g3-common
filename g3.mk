@@ -241,7 +241,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.g3
+    android.hardware.vibrator@1.1-service.g3
 
 # Wifi
 PRODUCT_PACKAGES += \
