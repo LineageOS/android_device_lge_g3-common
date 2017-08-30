@@ -125,9 +125,6 @@
     <!-- Default LED on time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOn">1000</integer>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
-
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces. If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
@@ -239,8 +236,8 @@
             32 - Camera
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">64</integer>
+         config to 7. >
+    <integer name="config_deviceHardwareKeys">64</integer-->
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -253,8 +250,8 @@
             32 - Camera
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">64</integer>
+         config to 7. >
+    <integer name="config_deviceHardwareWakeKeys">64</integer-->
 
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
@@ -295,10 +292,7 @@
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3700</integer>
 
     <!-- Support in Surfaceflinger for blur layers.
-         NOTE: This requires additional hardware-specific code. -->
-    <bool name="config_uiBlurEnabled">true</bool>
-
-    <!-- Configuration to support SIM contact batch operation -->
-    <bool name="config_sim_phonebook_batch_operation">false</bool>
+         NOTE: This requires additional hardware-specific code. >
+    <bool name="config_uiBlurEnabled">true</bool-->
 
 </resources>
