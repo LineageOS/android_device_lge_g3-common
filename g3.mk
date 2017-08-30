@@ -102,10 +102,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
-
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
