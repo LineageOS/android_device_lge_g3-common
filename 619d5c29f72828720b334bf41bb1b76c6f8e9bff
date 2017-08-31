@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4dc40cd_66608122",
+        "filename": "camera/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2017-08-31T14:19:37Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "range": {
+        "startLine": 8,
+        "startChar": 109,
+        "endLine": 8,
+        "endChar": 110
+      },
+      "revId": "619d5c29f72828720b334bf41bb1b76c6f8e9bff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "105166f1_1e4db4ff",
+        "filename": "camera/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2017-08-31T14:19:37Z",
+      "side": 1,
+      "message": "tab",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 1
+      },
+      "revId": "619d5c29f72828720b334bf41bb1b76c6f8e9bff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "002bfbe3_bc13eed8",
+        "filename": "camera/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2017-08-31T14:19:37Z",
+      "side": 1,
+      "message": "tab",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "619d5c29f72828720b334bf41bb1b76c6f8e9bff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
