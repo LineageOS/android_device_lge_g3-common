@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c49976a_9d9a8bfe",
+        "filename": "g3.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2017-08-31T14:25:57Z",
+      "side": 1,
+      "message": "tab",
+      "range": {
+        "startLine": 230,
+        "startChar": 0,
+        "endLine": 230,
+        "endChar": 1
+      },
+      "revId": "c49f2f3d7bd1e42f194f356604cfe4c19eed3f25",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
