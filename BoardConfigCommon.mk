@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 - The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,8 +18,6 @@
 -include vendor/lge/g3-common/BoardConfigVendor.mk
 
 LOCAL_PATH := device/lge/g3-common
-
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
