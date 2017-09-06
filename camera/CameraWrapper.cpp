@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2012-2015, The CyanogenMod Project
+ * Copyright (C) 2017 - The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +33,31 @@
 #include "hardware/camera.h"
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
+
+static const char AUDIO_ZOOM_OFF[] = "audio-zoom";
+static const char AUDIO_ZOOM_ON[] = "audio-zoom";
+static const char BEAUTY_SHOT_OFF[] = "beauty-shot";
+static const char BEAUTY_SHOT_ON[] = "beauty-shot";
+static const char BURST_SHOT_OFF[] = "burst-shot";
+static const char BURST_SHOT_ON[] = "burst-shot";
+static const char KEY_AUDIO_ZOOM[] = "audio-zoom";
+static const char KEY_AUDIO_ZOOM_SUPPORTED[] = "audio-zoom-supported";
+static const char KEY_BEAUTY_SHOT[] = "beauty-shot";
+static const char KEY_BEAUTY_SHOT_SUPPORTED[] = "beauty-shot-supported";
+static const char KEY_BURST_SHOT[] = "burst-shot";
+static const char KEY_BURST_SHOT_SUPPORTED[] = "burst-shot-supported";
+static const char KEY_FOCUS_MODE_OBJECT_TRACKING[] = "object-tracking";
+static const char KEY_FOCUS_MODE_OBJECT_TRACKING_SUPPORTED[] = "object-tracking-supported";
+static const char KEY_ISO_MODE[] = "iso";
+static const char KEY_LGE_CAMERA[] = "lge-camera";
+static const char KEY_LGE_ISO_MODE[] = "lg-iso";
+static const char KEY_SUPPORTED_ISO_MODES[] = "iso-values";
+static const char KEY_VIDEO_WDR[] = "video-wdr";
+static const char KEY_VIDEO_WDR_SUPPORTED[] = "video-wdr-supported";
+static const char VIDEO_WDR_OFF[] = "video-wdr";
+static const char VIDEO_WDR_ON[] = "video-wdr";
+static const char OBJECT_TRACKING_ON[] = "object-tracking";
+static const char OBJECT_TRACKING_OFF[] = "object-tracking";
 
 static android::Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
@@ -147,49 +173,49 @@ static char *camera_fixup_getparams(int id, const char *settings)
         videoMode = (!strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true"));
     }
 
-    params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
+    params.set(KEY_SUPPORTED_ISO_MODES, iso_values[id]);
 
     /* lge-iso to iso */
-    if(params.get(android::CameraParameters::KEY_LGE_ISO_MODE)) {
-        isoMode = params.get(android::CameraParameters::KEY_LGE_ISO_MODE);
+    if(params.get(KEY_LGE_ISO_MODE)) {
+        isoMode = params.get(KEY_LGE_ISO_MODE);
         ALOGV("%s: ISO mode: %s", __FUNCTION__, isoMode);
 
         if(strcmp(isoMode, "auto") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "auto");
+            params.set(KEY_ISO_MODE, "auto");
         } else if(strcmp(isoMode, "50") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO50");
+            params.set(KEY_ISO_MODE, "ISO50");
         } else if(strcmp(isoMode, "100") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO100");
+            params.set(KEY_ISO_MODE, "ISO100");
         } else if(strcmp(isoMode, "150") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO150");
+            params.set(KEY_ISO_MODE, "ISO150");
         } else if(strcmp(isoMode, "200") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO200");
+            params.set(KEY_ISO_MODE, "ISO200");
         } else if(strcmp(isoMode, "250") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO250");
+            params.set(KEY_ISO_MODE, "ISO250");
         } else if(strcmp(isoMode, "300") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO300");
+            params.set(KEY_ISO_MODE, "ISO300");
         } else if(strcmp(isoMode, "350") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO350");
+            params.set(KEY_ISO_MODE, "ISO350");
         } else if(strcmp(isoMode, "400") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO400");
+            params.set(KEY_ISO_MODE, "ISO400");
         } else if(strcmp(isoMode, "450") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO450");
+            params.set(KEY_ISO_MODE, "ISO450");
         } else if(strcmp(isoMode, "500") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO500");
+            params.set(KEY_ISO_MODE, "ISO500");
         } else if(strcmp(isoMode, "600") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO600");
+            params.set(KEY_ISO_MODE, "ISO600");
         } else if(strcmp(isoMode, "700") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO700");
+            params.set(KEY_ISO_MODE, "ISO700");
         } else if(strcmp(isoMode, "800") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO800");
+            params.set(KEY_ISO_MODE, "ISO800");
         } else if(strcmp(isoMode, "1000") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO1000");
+            params.set(KEY_ISO_MODE, "ISO1000");
         } else if(strcmp(isoMode, "1500") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO1500");
+            params.set(KEY_ISO_MODE, "ISO1500");
         } else if(strcmp(isoMode, "2000") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO2000");
+            params.set(KEY_ISO_MODE, "ISO2000");
         } else if(strcmp(isoMode, "2700") == 0) {
-            params.set(android::CameraParameters::KEY_ISO_MODE, "ISO2700");
+            params.set(KEY_ISO_MODE, "ISO2700");
         }
     }
 
@@ -239,7 +265,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
     params.dump();
 #endif
 
-    params.set(android::CameraParameters::KEY_LGE_CAMERA, (id == 0 && is4k(params)) ? "1" : "0");
+    params.set(KEY_LGE_CAMERA, (id == 0 && is4k(params)) ? "1" : "0");
 
     if (params.get(android::CameraParameters::KEY_RECORDING_HINT)) {
         videoMode = (!strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true"));
@@ -252,48 +278,48 @@ static char *camera_fixup_setparams(int id, const char *settings)
     }
 
     /* iso to lge-iso */
-    if(params.get(android::CameraParameters::KEY_ISO_MODE)) {
-        isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
+    if(params.get(KEY_ISO_MODE)) {
+        isoMode = params.get(KEY_ISO_MODE);
         ALOGV("%s: ISO mode: %s", __FUNCTION__, isoMode);
 
-        params.set(android::CameraParameters::KEY_ISO_MODE, "auto");
+        params.set(KEY_ISO_MODE, "auto");
 
         if(strcmp(isoMode, "auto") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "auto");
+            params.set(KEY_LGE_ISO_MODE, "auto");
         } else if(strcmp(isoMode, "ISO50") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "50");
+            params.set(KEY_LGE_ISO_MODE, "50");
         } else if(strcmp(isoMode, "ISO100") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "100");
+            params.set(KEY_LGE_ISO_MODE, "100");
         } else if(strcmp(isoMode, "ISO150") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "150");
+            params.set(KEY_LGE_ISO_MODE, "150");
         } else if(strcmp(isoMode, "ISO200") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "200");
+            params.set(KEY_LGE_ISO_MODE, "200");
         } else if(strcmp(isoMode, "ISO250") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "250");
+            params.set(KEY_LGE_ISO_MODE, "250");
         } else if(strcmp(isoMode, "ISO300") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "300");
+            params.set(KEY_LGE_ISO_MODE, "300");
         } else if(strcmp(isoMode, "ISO350") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "350");
+            params.set(KEY_LGE_ISO_MODE, "350");
         } else if(strcmp(isoMode, "ISO400") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "400");
+            params.set(KEY_LGE_ISO_MODE, "400");
         } else if(strcmp(isoMode, "ISO450") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "450");
+            params.set(KEY_LGE_ISO_MODE, "450");
         } else if(strcmp(isoMode, "ISO500") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "500");
+            params.set(KEY_LGE_ISO_MODE, "500");
         } else if(strcmp(isoMode, "ISO600") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "600");
+            params.set(KEY_LGE_ISO_MODE, "600");
         } else if(strcmp(isoMode, "ISO700") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "700");
+            params.set(KEY_LGE_ISO_MODE, "700");
         } else if(strcmp(isoMode, "ISO800") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "800");
+            params.set(KEY_LGE_ISO_MODE, "800");
         } else if(strcmp(isoMode, "ISO1000") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "1000");
+            params.set(KEY_LGE_ISO_MODE, "1000");
         } else if(strcmp(isoMode, "ISO1500") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "1500");
+            params.set(KEY_LGE_ISO_MODE, "1500");
         } else if(strcmp(isoMode, "ISO2000") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "2000");
+            params.set(KEY_LGE_ISO_MODE, "2000");
         } else if(strcmp(isoMode, "ISO2700") == 0) {
-            params.set(android::CameraParameters::KEY_LGE_ISO_MODE, "2700");
+            params.set(KEY_LGE_ISO_MODE, "2700");
         }
     }
 
