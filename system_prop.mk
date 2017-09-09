@@ -47,6 +47,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.qcril.disable_retry=true \
     ro.use_data_netmgrd=true
 
+# SDCardFS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=false
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.qualcomm.sns.daemon=e \
