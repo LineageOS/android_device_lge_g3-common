@@ -251,6 +251,9 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
     chown system system /sys/class/leds/red/pattern_id
