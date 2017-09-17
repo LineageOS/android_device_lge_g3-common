@@ -14,12 +14,15 @@
 
 /sys/class/rfkill/rfkill0/state                     u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk    u:object_r:sysfs_thermal:s0
+/sys/devices/mdp.0/qcom,mdss_fb_primary.178/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/platform/tspdrv/nforce_timed           u:object_r:sysfs_vibrator:s0
 /sys/devices/system/cpu(/.*)?                       u:object_r:sysfs_devices_system_cpu:s0
 /sys/devices/virtual/input/lge_touch/tap_to_wake    u:object_r:sysfs_tap2wake:s0
+/sys/devices/virtual/lg_rgb_led/use_patterns(/.*)?  u:object_r:sysfs_leds:s0
 /sys/module/bcmdhd/parameters/firmware_path         u:object_r:sysfs_wlan_fwpath:s0
-/sys/devices/platform/tspdrv/nforce_timed           u:object_r:sysfs_vibrator:s0
 
 /system/vendor/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
 /system/vendor/bin/thermal-engine                          u:object_r:thermal-engine_exec:s0
 
+/system/vendor/bin/hw/android\.hardware\.light@2\.0-service\.g3    u:object_r:hal_light_default_exec:s0
 /system/vendor/bin/hw/android\.hardware\.vibrator@1\.1-service\.g3 u:object_r:hal_vibrator_default_exec:s0
