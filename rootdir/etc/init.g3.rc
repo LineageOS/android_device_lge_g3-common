@@ -115,16 +115,6 @@ on boot
     chown system system /sys/class/leds/torch-light/brightness
     chmod 0666 /sys/class/leds/torch-light/brightness
 
-    # emotional led
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
-
     # charger timer
     chown system system /sys/class/power_supply/ac/charger_timer
 
