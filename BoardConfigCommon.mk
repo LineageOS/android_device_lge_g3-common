@@ -67,10 +67,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
-# CMHW
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/lineagehw/
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap_to_wake"
-
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_LEGACY_HW_DISK_ENCRYPTION := true
@@ -106,6 +102,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Power
 TARGET_HAS_LEGACY_POWER_STATS := true
 TARGET_HAS_NO_WIFI_STATS := true
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap_to_wake"
 TARGET_USES_INTERACTION_BOOST := true
 
 # Qualcomm support
