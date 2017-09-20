@@ -111,14 +111,6 @@ etc/firmware/DLdata_rev28B_data1.ecl:vendor/firmware/DLdata_rev28B_data1.ecl
 etc/firmware/DLdata_rev28B_data2.ecl:vendor/firmware/DLdata_rev28B_data2.ecl
 etc/firmware/DLdata_rev28B_data3.ecl:vendor/firmware/DLdata_rev28B_data3.ecl
 
-# DRM
-vendor/lib/libdrmdecrypt.so
-vendor/lib/libwvm.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-
 # Sensors
 bin/sensors.qcom:vendor/bin/sensors.qcom
 vendor/lib/hw/sensors.msm8974.so
@@ -165,6 +157,7 @@ vendor/lib/libqti-perfd-client.so
 
 # QSEE
 bin/qseecomd:vendor/bin/qseecomd
+vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/librpmb.so
@@ -215,3 +208,6 @@ vendor/firmware/wcnss.b07
 vendor/firmware/wcnss.b08
 vendor/firmware/wcnss.b09
 vendor/firmware/wcnss.mdt
+
+# Widevine - from angler - OPR6.170623.017 factory image
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
