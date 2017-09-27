@@ -180,6 +180,10 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libstagefrighthw
 
+# Default OMX service to non-Treble
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.media.treble_omx=false
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
