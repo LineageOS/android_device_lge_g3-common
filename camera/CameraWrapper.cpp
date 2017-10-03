@@ -601,7 +601,7 @@ static char *camera_get_parameters(struct camera_device *device)
     return params;
 }
 
-static void camera_put_parameters(struct camera_device *device, char *params)
+static void camera_put_parameters(struct camera_device *device __unused, char *params)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
