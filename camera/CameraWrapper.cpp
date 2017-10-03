@@ -601,7 +601,7 @@ static char *camera_get_parameters(struct camera_device *device)
     return params;
 }
 
-static void camera_put_parameters(struct camera_device *device, char *params)
+static void camera_put_parameters(struct camera_device *device __unused, char *params)
 {
     if (params)
         free(params);
