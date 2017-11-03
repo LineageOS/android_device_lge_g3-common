@@ -353,7 +353,7 @@ service btinit-sh /system/bin/sh /init.qcom.bt.sh
     oneshot
     disabled
 
-service cal_sensors-sh /system/bin/sh /init.sensors.sh
+service cal_sensors-sh /vendor/bin/sh /init.sensors.sh
     class core
     user root
     seclabel u:r:qti_init_shell:s0
