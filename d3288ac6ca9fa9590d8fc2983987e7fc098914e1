@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9edfb73_c641b9f9",
+        "filename": "configs/sec_config",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 15450
+      },
+      "writtenOn": "2017-11-05T20:04:24Z",
+      "side": 1,
+      "message": "I\u0027m not sure but I don\u0027t think we want sensors to create a raw INET socket. https://github.com/LineageOS/android_system_core/blob/lineage-15.0/libcutils/include/private/android_filesystem_config.h#L152",
+      "revId": "d3288ac6ca9fa9590d8fc2983987e7fc098914e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
