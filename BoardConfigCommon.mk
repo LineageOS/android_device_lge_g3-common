@@ -79,6 +79,9 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
+
 # HIDL
 DEVICE_MANIFEST_FILE := device/lge/g3-common/configs/manifest.xml
 
