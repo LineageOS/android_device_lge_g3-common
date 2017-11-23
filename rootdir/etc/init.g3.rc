@@ -477,7 +477,7 @@ service qcom-sh /system/bin/sh /init.qcom.sh
 service qmuxd /system/bin/qmuxd
     class core
     user radio
-    group radio audio bluetooth gps qcom_diag
+    group radio audio bluetooth gps oem_2950
 
 service rmt_storage /system/bin/rmt_storage
     class core
