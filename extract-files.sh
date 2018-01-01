@@ -59,4 +59,13 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 
 extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 
+LIBDSI_NETCTRL="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libdsi_netctrl.so
+sed -i 's|/system/etc/data/dsi_config.xml|/vendor/etc/data/dsi_config.xml|g' "$LIBDSI_NETCTRL"
+
+NETMGRD="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/bin/netmgrd
+sed -i 's|/system/etc/data/netmgr_config.xml|/vendor/etc/data/netmgr_config.xml|g' "$NETMGRD"
+
+THERMAL_ENGINE="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary/vendor/bin/thermal-engine
+sed -i 's|/system/etc|/vendor/etc|g' "$THERMAL_ENGINE"
+
 "$MY_DIR"/setup-makefiles.sh
