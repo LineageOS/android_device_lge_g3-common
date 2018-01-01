@@ -334,7 +334,7 @@ service charger /sbin/healthd -c
     critical
     seclabel u:r:healthd:s0
 
-service baseband-sh /system/bin/sh /init.baseband.sh
+service baseband-sh /vendor/bin/sh /vendor/bin/init.baseband.sh
     class late_start
     user root
     seclabel u:r:qti_init_shell:s0
@@ -347,13 +347,14 @@ service hwaddrs /system/bin/hwaddrs
     group bluetooth wifi
     oneshot
 
-service btinit-sh /system/bin/sh /init.qcom.bt.sh
+service btinit-sh /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
     class core
     user root
+    seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
 
-service cal_sensors-sh /vendor/bin/sh /init.sensors.sh
+service cal_sensors-sh /vendor/bin/sh /vendor/bin/init.sensors.sh
     class core
     user root
     seclabel u:r:qti_init_shell:s0
@@ -460,7 +461,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 
 # --> init.msm8974_core.rc <--
 
-service lge-sensor-sh /system/bin/sh /init.msm8974.sensor.sh
+service lge-sensor-sh /vendor/bin/sh /vendor/bin/init.msm8974.sensor.sh
     class core
     user root
     seclabel u:r:qti_init_shell:s0
@@ -468,7 +469,7 @@ service lge-sensor-sh /system/bin/sh /init.msm8974.sensor.sh
 
 # --> init.qcom.rc <--
 
-service qcom-sh /system/bin/sh /init.qcom.sh
+service qcom-sh /vendor/bin/sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     seclabel u:r:qti_init_shell:s0

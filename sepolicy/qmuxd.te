@@ -1,0 +1,1 @@
+allow qmuxd sysfs:file r_file_perms;
