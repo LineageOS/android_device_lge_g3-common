@@ -1,1 +1,0 @@
-allow wpa rfkill_device:chr_file r_file_perms;
