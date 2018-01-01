@@ -1,2 +1,5 @@
 allow system_server cir_device:chr_file { rw_file_perms ioctl };
+# Allow system to talk to sensors
+allow system_server sensors_device:chr_file getattr;
+allow system_server sysfs_sensors:file write;
 allow system_server sysfs_tap2wake:file rw_file_perms;
