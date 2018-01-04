@@ -1,9 +1,9 @@
 #!/system/bin/sh
 
-if [ -f /system/bin/hci_qcomm_init ]; then
+if [ -f /vendor/bin/hci_qcomm_init ]; then
     setprop ro.qualcomm.bt.hci_transport smd
     setprop bluetooth.status off
-    /system/bin/hci_qcomm_init -b `cat /data/misc/bluetooth/bdaddr`
+    /vendor/bin/hci_qcomm_init -b `cat /data/misc/bluetooth/bdaddr`
     setprop bluetooth.status on
 fi
 
