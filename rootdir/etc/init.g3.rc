@@ -420,12 +420,6 @@ service wcnss-service /vendor/bin/wcnss_service
     group system wifi
     oneshot
 
-service immvibed /system/bin/immvibed
-    class main
-    user shell
-    group shell system
-    oneshot
-
 # --> init.qcom.rc <--
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
