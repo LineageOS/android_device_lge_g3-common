@@ -177,6 +177,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/vendor/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/vendor/etc/nfcee_access.xml
 
+# Offmode Charging
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
