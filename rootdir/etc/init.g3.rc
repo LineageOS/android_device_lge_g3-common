@@ -312,9 +312,6 @@ on post-fs-data
     chmod 0660 /dev/ramdump_venus
     chown system system /dev/ramdump_venus
 
-    # Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
-
     # Create /data/time folder for time-services
     mkdir /data/time/ 0700 system system
 
