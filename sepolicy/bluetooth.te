@@ -1,5 +1,7 @@
 allow bluetooth firmware_file:dir { read open search };
 allow bluetooth firmware_file:file { read open getattr };
 
+allow bluetooth netd_service:service_manager find;
+
 # Write to /sys/class/rfkill/rfkill0/state
 allow bluetooth sysfs:file rw_file_perms;
