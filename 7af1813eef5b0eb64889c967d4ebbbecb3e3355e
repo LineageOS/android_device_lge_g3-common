@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea7cd9b4_df21b841",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-05-06T00:14:32Z",
+      "side": 1,
+      "message": "Just like I commented on g2\u0027s change (kanged from this one), this is wrong. When none of the above conditions are met, lights should be off:\n\nmBlinkPattern \u003c\u003c 0 \u003c\u003c std::endl;",
+      "range": {
+        "startLine": 107,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 50
+      },
+      "revId": "7af1813eef5b0eb64889c967d4ebbbecb3e3355e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
