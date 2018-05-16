@@ -879,8 +879,8 @@
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHL Volume" value="20" />
         <ctl name="HPHR Volume" value="20" />
-        <ctl name="RX1 Digital Volume" value="60" />
-        <ctl name="RX2 Digital Volume" value="60" />
+        <ctl name="RX1 Digital Volume" value="54" />
+        <ctl name="RX2 Digital Volume" value="54" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
 
@@ -990,8 +990,8 @@
     <path name="voice-headphones">
         <path name="headphones" />
         <ctl name="COMP1 Switch" value="0" />
-        <ctl name="HPHL Volume" value="18" />
-        <ctl name="HPHR Volume" value="18" />
+        <ctl name="HPHL Volume" value="11" />
+        <ctl name="HPHR Volume" value="11" />
         <ctl name="RX1 Digital Volume" value="60" />
         <ctl name="RX2 Digital Volume" value="60" />
     </path>
@@ -1267,13 +1267,13 @@
     <path name="camcorder-0">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM TX7 MUX" value="DEC2" />
-        <ctl name="DEC2 MUX" value="ADC5" />
+        <ctl name="SLIM TX7 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="SLIM TX8 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="ADC5 Volume" value="9" />
-        <ctl name="DEC2 Volume" value="60" />
+        <ctl name="ADC3 Volume" value="9" />
+        <ctl name="DEC4 Volume" value="60" />
         <ctl name="ADC1 Volume" value="9" />
         <ctl name="DEC6 Volume" value="60" />
     </path>
@@ -1281,13 +1281,13 @@
     <path name="camcorder-90">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM TX7 MUX" value="DEC2" />
-        <ctl name="DEC2 MUX" value="ADC5" />
+        <ctl name="SLIM TX7 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="SLIM TX8 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="ADC5 Volume" value="9" />
-        <ctl name="DEC2 Volume" value="60" />
+        <ctl name="ADC3 Volume" value="9" />
+        <ctl name="DEC4 Volume" value="60" />
         <ctl name="ADC1 Volume" value="9" />
         <ctl name="DEC6 Volume" value="60" />
     </path>
@@ -1297,13 +1297,13 @@
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM TX7 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
-        <ctl name="SLIM TX8 MUX" value="DEC2" />
-        <ctl name="DEC2 MUX" value="ADC5" />
+        <ctl name="SLIM TX8 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
+        <ctl name="ADC3 Volume" value="9" />
+        <ctl name="DEC4 Volume" value="60" />
         <ctl name="ADC1 Volume" value="9" />
         <ctl name="DEC6 Volume" value="60" />
-        <ctl name="ADC5 Volume" value="9" />
-        <ctl name="DEC2 Volume" value="60" />
     </path>
 
     <path name="camcorder-270">
@@ -1311,13 +1311,13 @@
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM TX7 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
-        <ctl name="SLIM TX8 MUX" value="DEC2" />
-        <ctl name="DEC2 MUX" value="ADC5" />
+        <ctl name="SLIM TX8 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
+        <ctl name="ADC3 Volume" value="9" />
+        <ctl name="DEC4 Volume" value="60" />
         <ctl name="ADC1 Volume" value="9" />
         <ctl name="DEC6 Volume" value="60" />
-        <ctl name="ADC5 Volume" value="9" />
-        <ctl name="DEC2 Volume" value="60" />
     </path>
 
     <path name="speaker-dmic-endfire">
