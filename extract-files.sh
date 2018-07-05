@@ -62,6 +62,9 @@ extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 LIBDSI_NETCTRL="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libdsi_netctrl.so
 sed -i 's|/system/etc/data/dsi_config.xml|/vendor/etc/data/dsi_config.xml|g' "$LIBDSI_NETCTRL"
 
+IMSCMLIBRARY="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary/vendor/etc/permissions/imscm.xml
+sed -i 's|/system/framework|/vendor/framework|g' "$IMSCMLIBRARY"
+
 NETMGRD="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/bin/netmgrd
 sed -i 's|/system/etc/data/netmgr_config.xml|/vendor/etc/data/netmgr_config.xml|g' "$NETMGRD"
 
