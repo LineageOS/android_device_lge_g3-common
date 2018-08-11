@@ -26,7 +26,7 @@ on init
     restorecon /dev/pipes
 
 on fs
-    mount_all fstab.g3
+    mount_all /vendor/etc/fstab.g3
     restorecon_recursive /sns
     restorecon_recursive /persist
     restorecon_recursive /persist-lg
