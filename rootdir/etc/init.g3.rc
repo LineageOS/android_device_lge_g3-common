@@ -454,7 +454,7 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 service netmgrd /vendor/bin/netmgrd
     class main
     user root
-    group root wifi wakelock radio inet
+    group root wifi wakelock radio inet oem_2950
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
