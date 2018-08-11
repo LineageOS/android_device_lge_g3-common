@@ -15,6 +15,7 @@
 #
 
 $(call inherit-product-if-exists, vendor/lge/g3-common/g3-common-vendor.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
