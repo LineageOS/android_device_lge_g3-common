@@ -465,17 +465,18 @@ service qcom-sh /vendor/bin/sh /vendor/bin/init.qcom.sh
 service qmuxd /vendor/bin/qmuxd
     class core
     user radio
-    group radio audio bluetooth gps oem_2950
+    group radio audio bluetooth wakelock gps oem_2950
 
 service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     disabled
+    group wakelock
 
 service sensors /vendor/bin/sensors.qcom
     class late_start
     user root
-    group root
+    group root wakelock
     disabled
 
 on property:bluetooth.isEnabled=true
