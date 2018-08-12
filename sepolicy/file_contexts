@@ -20,3 +20,6 @@
 
 /system/vendor/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
 /system/vendor/bin/thermal-engine                          u:object_r:thermal-engine_exec:s0
+
+/data/system/time(/.*)?                             u:object_r:time_data_file:s0
+
