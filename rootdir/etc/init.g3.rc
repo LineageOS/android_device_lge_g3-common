@@ -1,5 +1,5 @@
-import init.g3.power.rc
-import init.g3.usb.rc
+import /vendor/etc/init/hw/init.g3.power.rc
+import /vendor/etc/init/hw/init.g3.usb.rc
 import init.target.rc
 
 on early-init
