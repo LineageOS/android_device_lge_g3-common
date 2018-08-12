@@ -312,8 +312,8 @@ on post-fs-data
     chmod 0660 /dev/ramdump_venus
     chown system system /dev/ramdump_venus
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
+    # Create /data/system/time folder for time-services
+    mkdir /data/system/time/ 0700 system system
 
     mkdir /data/audio/ 0770 media audio
 
@@ -394,9 +394,10 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
 
 service time_daemon /vendor/bin/time_daemon
+   capabilities SYS_TIME
    class late_start
-   user root
-   group root
+   user system
+   group net_raw
 
 service adsprpcd /vendor/bin/adsprpcd
    class main
