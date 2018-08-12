@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 
 if [[ ! -f /sns/cal/calb && -f /vendor/etc/sensors/sensor_def_variable.conf ]]; then
     rm /sns/cal/sns.reg
