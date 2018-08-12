@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 
 if [ -f /vendor/bin/hci_qcomm_init ]; then
     setprop ro.qualcomm.bt.hci_transport smd
