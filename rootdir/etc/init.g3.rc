@@ -446,7 +446,7 @@ service wcnss-service /vendor/bin/wcnss_service
 
 # --> init.qcom.rc <--
 
-service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
+service irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
