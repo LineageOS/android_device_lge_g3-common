@@ -362,11 +362,11 @@ on property:init.svc.hwaddrs=stopped
     chmod 644 /data/misc/wifi/config
     chmod 644 /data/misc/bluetooth/bdaddr
 
-on property:bluetooth.hciattach=true
+on property:vendor.bluetooth.hciattach=true
      start btinit-sh
 
-on property:bluetooth.hciattach=false
-    setprop bluetooth.status off
+on property:vendor.bluetooth.hciattach=false
+    setprop vendor.bluetooth.status off
 
 # --> init.target.rc <--
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
