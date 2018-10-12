@@ -9,3 +9,4 @@ allow qti_init_shell qmuxd_socket:dir w_dir_perms;
 allow qti_init_shell qmuxd_socket:sock_file create_file_perms;
 allow qti_init_shell qmuxd_socket:unix_stream_socket connectto;
 allow qti_init_shell radio_prop:property_service set;
+allow qti_init_shell diag_device:chr_file {read write};
