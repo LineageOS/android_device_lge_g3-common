@@ -215,6 +215,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.bt.sh \
     init.baseband.sh \
+    init.class_main.sh \
     init.sensors.sh \
     ueventd.g3.rc
 
