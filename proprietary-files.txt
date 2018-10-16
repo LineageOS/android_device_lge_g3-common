@@ -174,16 +174,16 @@ bin/irsc_util:vendor/bin/irsc_util
 
 # Radio
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
--app/shutdownlistener/shutdownlistener.apk
+-app/shutdownlistener/shutdownlistener.apk:vendor/app/shutdownlistener/shutdownlistener.apk
 bin/radish:vendor/bin/radish
 lib/librmnetctl.so:vendor/lib/librmnetctl.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
-framework/qcnvitems.jar
-framework/qcrilhook.jar
+etc/permissions/qcnvitems.xml:vendor/etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
+framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 
 # Sensors
 etc/sensors/sensor_def_common.conf:vendor/etc/sensors/sensor_def_common.conf
@@ -201,7 +201,7 @@ vendor/lib/libthermalioctl.so
 bin/time_daemon:vendor/bin/time_daemon|e5fe186973b90715ab9a045d4dcd63d0134e2e63
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
--app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk:vendor/app/TimeService/TimeService.apk
 
 # WCNSS
 vendor/firmware/wcnss.b00
