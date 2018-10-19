@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbc48586_1ded76ff",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1690
+      },
+      "writtenOn": "2018-10-19T23:40:54Z",
+      "side": 1,
+      "message": "Is there any reason to move this?  Don\u0027t create extra changes without a reason.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "757fa824ed20f0085e55238b939989bcaf7995b8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
