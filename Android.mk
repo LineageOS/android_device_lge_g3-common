@@ -18,6 +18,8 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter g3 d850 d851 d852 d855 ls990 vs985 f400, $(TARGET_DEVICE)),)
 
+LOCAL_STATIC_LIBRARIES := libbase
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
