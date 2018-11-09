@@ -126,3 +126,6 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
+
+# Shipping API level (for CTS backward compatibility)
+PRODUCT_SHIPPING_API_LEVEL := 19
