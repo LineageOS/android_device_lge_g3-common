@@ -1,1 +1,2 @@
 allow wcnss_service misc_block_device:blk_file r_file_perms;
+allow wcnss_service block_device:dir {search};
