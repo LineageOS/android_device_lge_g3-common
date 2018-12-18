@@ -7,7 +7,6 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
     mkdir /firmware 0771 system system
-    symlink /data/tombstones /tombstones
 
     # increase read ahead cache size
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
