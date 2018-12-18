@@ -1,2 +1,1 @@
-type proc_swaps, fs_type;
-type sysfs_tap2wake, fs_type, sysfs_type;
+type sysfs_lgetouch, fs_type, sysfs_type;
