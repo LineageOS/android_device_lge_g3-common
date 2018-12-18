@@ -18,8 +18,6 @@ on init
     mkdir /sns 0755 system system
     mkdir /mpt 0755 system system
 
-    symlink /sdcard /storage/sdcard0
-
     # Immersion (immvibed)
     export VIBE_PIPE_PATH /dev/pipes
     mkdir /dev/pipes 0771 shell shell
