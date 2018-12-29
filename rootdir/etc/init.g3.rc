@@ -494,3 +494,6 @@ on property:sys.boot_completed=1
     write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
 
     start baseband-sh
+
+on property:sys.listeners.registered=*
+    setprop vendor.sys.keymaster.loaded ${sys.listeners.registered}
