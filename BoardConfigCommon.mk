@@ -92,9 +92,6 @@ TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/configs/compatibility_matrix.xml
 
-# Keymaster
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
 # Offmode Charging
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/charger/images
 
