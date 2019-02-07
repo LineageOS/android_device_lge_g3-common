@@ -22,6 +22,11 @@
 /sys/devices/virtual/lg_rgb_led/use_patterns(/.*)?                       u:object_r:sysfs_leds:s0
 /sys/module/bcmdhd/parameters/firmware_path                              u:object_r:sysfs_wlan_fwpath:s0
 
+/sys/devices/f9923000.i2c/i2c-1/1-006b/power_supply/battery(/.*)?        u:object_r:sysfs_batteryinfo:s0
+/sys/devices/f9923000.i2c/i2c-1/1-006b/power_supply/ac(/.*)?             u:object_r:sysfs_batteryinfo:s0
+/sys/devices/currentnow_device-[a-z0-9]+/power_supply/cn(/.*)?           u:object_r:sysfs_batteryinfo:s0
+/sys/devices/unified_wlc.[0-9]+/power_supply/wireless(/.*)?              u:object_r:sysfs_batteryinfo:s0
+
 /system/vendor/bin/hwaddrs                                               u:object_r:hwaddrs_exec:s0
 /system/vendor/bin/thermal-engine                                        u:object_r:thermal-engine_exec:s0
 
