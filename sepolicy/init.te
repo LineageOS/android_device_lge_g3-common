@@ -1,3 +1,5 @@
 userdebug_or_eng(`
   allow init debugfs:file write;
 ')
+
+allow init sysfs:file {setattr};
