@@ -3,3 +3,4 @@ allow system_server cir_device:chr_file { rw_file_perms ioctl };
 allow system_server sensors_device:chr_file getattr;
 allow system_server sysfs_sensors:file write;
 allow system_server sysfs_lgetouch:file rw_file_perms;
+allow system_server crash_dump:process {getpgid};
