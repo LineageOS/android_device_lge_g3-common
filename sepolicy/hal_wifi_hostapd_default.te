@@ -1,0 +1,1 @@
+allow hal_wifi_hostapd_default rfkill_device:chr_file {r_file_perms};
