@@ -148,12 +148,19 @@ etc/firmware/a330_pfp.fw:vendor/firmware/a330_pfp.fw
 etc/firmware/a330_pm4.fw:vendor/firmware/a330_pm4.fw
 
 # Media
+vendor/lib/extractors/libmmparser.so
+vendor/lib/libFileMux.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmosal.so
+vendor/lib/libmmosal_proprietary.so
+vendor/lib/libmmparser_lite.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxWmaDec.so
 
 # Perf
@@ -216,3 +223,39 @@ vendor/firmware/wcnss.mdt
 
 # Widevine - from angler - OPR6.170623.017 factory image
 vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
+
+# WiFi Display - from daisy - PKQ1.180917.001
+vendor/bin/wfdservice
+vendor/etc/init/wfdservice.rc
+vendor/etc/wfdconfig.xml
+vendor/etc/wfdconfigsink.xml
+-vendor/framework/WfdCommon.jar
+vendor/lib/libmmrtpdecoder.so
+vendor/lib/libmmrtpencoder.so
+vendor/lib/libwfdavenhancements.so
+vendor/lib/libwfdclient.so
+vendor/lib/libwfdcodecv4l2.so
+vendor/lib/libwfdcommonutils.so
+vendor/lib/libwfdconfigutils.so
+vendor/lib/libwfdmminterface.so
+vendor/lib/libwfdmmsink.so
+vendor/lib/libwfdmmsrc.so
+vendor/lib/libwfdnative.so
+vendor/lib/libwfdrtsp.so
+vendor/lib/libwfdservice.so
+vendor/lib/libwfdsm.so
+vendor/lib/libwfduibcinterface.so
+vendor/lib/libwfduibcsinkinterface.so
+vendor/lib/libwfduibcsink.so
+vendor/lib/libwfduibcsrcinterface.so
+vendor/lib/libwfduibcsrc.so
+-priv-app/WfdService/WfdService.apk
+vendor/bin/wifidisplayhalservice
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
+vendor/lib/libwfdcommonutils_proprietary.so
+vendor/lib/libwfdhaldsmanager.so
+vendor/lib/libwfdhdcpcp.so
+vendor/lib/libwfdmmservice.so
+vendor/lib/libwfdmodulehdcpsession.so
