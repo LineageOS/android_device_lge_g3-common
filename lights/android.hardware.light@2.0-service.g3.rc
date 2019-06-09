@@ -10,6 +10,7 @@ on early-boot
     chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
 
 service vendor.light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.g3
+    interface android.hardware.light@2.0::ILight default
     class hal
     user system
     group system
