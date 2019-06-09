@@ -20,6 +20,9 @@
 #include <hidl/HidlTransportSupport.h>
 #include <utils/Errors.h>
 #include <utils/StrongPointer.h>
+#ifdef ARCH_ARM_32
+#include <hwbinder/ProcessState.h>
+#endif
 
 #include "Vibrator.h"
 
@@ -53,6 +56,9 @@ status_t registerVibratorService() {
 }
 
 int main() {
+#ifdef ARCH_ARM_32
+    android::hardware::ProcessState::initWithMmapSize((size_t)(32768));
+#endif
     configureRpcThreadpool(1, true);
     status_t status = registerVibratorService();
 
