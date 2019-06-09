@@ -11,6 +11,9 @@
 
 /persist-lg/sensors(/.*)?                                                u:object_r:sensors_persist_file:s0
 /sns(/.*)?                                                               u:object_r:sensors_persist_file:s0
+
+/dev/block/platform/msm_sdcc\.1/by-name/drm                              u:object_r:drm_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/mpt                              u:object_r:mpt_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/sns                              u:object_r:sns_block_device:s0
 
 /sys/class/rfkill/rfkill0/state                                          u:object_r:sysfs_bluetooth_writable:s0
