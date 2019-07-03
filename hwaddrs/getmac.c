@@ -37,7 +37,7 @@ int checkAddr(const char *const filepath, const char *const prefix)
     int checkfd = open(filepath, O_RDONLY);
 
     do {
-        char charbuf[17];
+        char charbuf[20]; /* needs to be more than 18 characters */
         int i;
 
         if (checkfd < 0) break; // doesn't exist/error
@@ -57,7 +57,9 @@ sizeof(charbuf));
             if (memcmp(charbuf, prefix, strlen(prefix))) break;
         }
 
-        if (read(checkfd, charbuf, 17) != 17) break;
+        /* there should be 18 characters, more indicates junk at end */
+        if (read(checkfd, charbuf, sizeof(charbuf)) != 18) break;
+        if (!isspace(charbuf[17])) break;
         for (i = 0; i < 17; i++) {
             if (i % 3 != 2) {
                 if (!isxdigit(charbuf[i])) {
