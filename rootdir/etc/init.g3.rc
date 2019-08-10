@@ -1,6 +1,5 @@
 import /vendor/etc/init/hw/init.g3.power.rc
 import /vendor/etc/init/hw/init.g3.usb.rc
-import init.target.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -10,29 +9,38 @@ on early-init
 
     # increase read ahead cache size
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
+    
+    write /sys/class/leds/lcd-backlight/brightness 177
 
 on init
-    mkdir /persist 0771 system system
-    mkdir /persist-lg 0771 system system
-    mkdir /sns 0755 system system
     mkdir /mpt 0755 system system
-
-    # Immersion (immvibed)
-    export VIBE_PIPE_PATH /dev/pipes
-    mkdir /dev/pipes 0771 shell shell
-    restorecon /dev/pipes
+    mkdir /persist 0771 system system
+    mkdir /persist-lg 0775 system system
+    mkdir /sns 0755 system system
 
 on fs
     mount_all /vendor/etc/fstab.g3
-    restorecon_recursive /sns
+
+    restorecon_recursive /mpt
     restorecon_recursive /persist
     restorecon_recursive /persist-lg
+    restorecon_recursive /sns
 
-    mkdir /persist/data 0700  system system
+    mkdir /persist/data 0700 system system
 
-    # Executing tune2fs to reserve some region in /data.(40MB)
+    # Executing tune2fs to reserve some region in /data (40MB)
     exec /system/bin/tune2fs -u system -r 10240 /dev/block/platform/msm_sdcc.1/by-name/userdata
-
+    
+    # FunctionFS
+    mkdir /dev/usb-ffs 0770 shell shell
+    mkdir /dev/usb-ffs/adb 0770 shell shell
+    mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
+    write /sys/class/android_usb/android0/f_ffs/aliases adb
+    mkdir /dev/bus 0755 root root
+    mkdir /dev/bus/usb 0755 root root
+    
+    setprop sys.usb.ffs.aio_compat 1
+    
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
@@ -40,29 +48,17 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
 
+    # Create directory used by audio subsystem
+    mkdir /data/misc/audio 0770 audio audio
+    mkdir /data/audio/ 0770 media audio
+
+    # Create directory used by bluetooth
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
+
     mkdir /data/misc/camera 0770 camera camera
 
-    # DivX DRM
-    mkdir /persist-lg/multimedia 0770 media divxdrm
-    mkdir /persist-lg/multimedia/nx 0770 media divxdrm
-    mkdir /persist-lg/multimedia/uma 0770 media divxdrm
-    mkdir /persist-lg/multimedia/scnt 0770 media divxdrm
-    mkdir /persist-lg/multimedia/scnt/sdadf 0770 media divxdrm
-
-    chown system system /mpt
-    chmod 0775 /mpt
-
-    # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-
-    # make directory for sns.reg used by sensordaemon
-    mkdir /sns/cal/ 0644 system system
-
-    # Vibrator
-    chown root system /sys/devices/platform/tspdrv/nforce_timed
-    chmod 0664 /sys/devices/platform/tspdrv/nforce_timed
-    restorecon /sys/devices/platform/tspdrv/nforce_timed
+    # Create directory used by display clients
+    mkdir /data/misc/display 0770 root system
 
     # Location services
     mkdir /data/misc/location 0770 gps gps
@@ -71,13 +67,87 @@ on post-fs-data
     mkdir /data/misc/location/gpsone_d 0770 system gps
     mkdir /data/misc/location/quipc 0770 gps system
 
+    # Create a folder for SRS to be able to create a usercfg file
+    mkdir /data/data/media 0770 media media
+
+    # NFC local data and nfcee xml storage
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
+
+    # Create directory for rild to play with
+    mkdir /data/misc/radio 0770 radio radio
+
+    # Create directory for sensordaemon
+    mkdir /sns/cal 0644 system system
+    mkdir /persist/sensors 0775 system root
+    write /persist/sensors/sensors_settings 1
+    chmod 0644 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
+
+    # Some blobs have a tendancy to reference the old sensor settings
+    # so create them here, just in case.
+    mkdir /data/system/sensors
+    chmod 665 /data/system/sensors
+    write /data/system/sensors/settings 1
+    chmod 0775 /data/system/sensors
+    restorecon /data/system/sensors/settings
+    chmod 0664 /data/system/sensors/settings
+    chown system /data/system/sensors/settings
+
+    # Create directory used by sensor subsystem
+    mkdir /data/misc/sensors 0775 system system
+    restorecon_recursive /data/misc/sensors
+
+    # Create /data/system/time folder for time-services
+    mkdir /data/system/time/ 0700 system system
+
+    # Create the directories used by the Wireless subsystem
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp system
+    mkdir /data/misc/fm 0770 system system
+    
+    # Vibrator
+    chown root system /sys/devices/platform/tspdrv/nforce_timed
+    chmod 0664 /sys/devices/platform/tspdrv/nforce_timed
+
+    chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
+
+    # Chown polling nodes as needed from UI running on system server
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+
+    chmod 0660 /dev/ramdump_adsp
+    chown system system /dev/ramdump_adsp
+    chmod 0660 /dev/ramdump_audio-ocmem
+    chown system system /dev/ramdump_audio-ocmem
+    chmod 0660 /dev/ramdump_modem
+    chown system system /dev/ramdump_modem
+    chmod 0660 /dev/ramdump_smem-modem
+    chown system system /dev/ramdump_smem-modem
+    chmod 0660 /dev/ramdump_smem-smd
+    chown system system /dev/ramdump_smem-smd
+    chmod 0660 /dev/ramdump_venus
+    chown system system /dev/ramdump_venus
+
+    setprop vold.post_fs_data_done 1
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
     write /sys/kernel/boot_adsp/boot 1
+    
+    write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
 on boot
+    # Create netmgr daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
     # BCM
@@ -111,17 +181,6 @@ on boot
     # Flashlight
     chown system system /sys/class/leds/torch-light/brightness
     chmod 0666 /sys/class/leds/torch-light/brightness
-
-    # charger timer
-    chown system system /sys/class/power_supply/ac/charger_timer
-
-    # charging_enable
-    chown system system /sys/class/power_supply/battery/charging_enabled
-
-    # safety timer
-    chown system system /sys/class/power_supply/battery/safety_timer_enabled
-
-    write /sys/class/leds/lcd-backlight/brightness 177
 
     # Assign TCP buffer thresholds to be ceiling value of technology maximums
     # Increased technology maximums should be reflected here.
@@ -192,13 +251,6 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    # Create netmgr daemon socket area
-    mkdir /dev/socket/netmgr 0750 radio radio
-
-    setprop wifi.interface wlan0
-
-    setprop ro.telephony.call_ring.multiple false
-
     # Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
@@ -242,72 +294,12 @@ on boot
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-    write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
-
     chown system system /sys/class/leds/red/pattern_id
     chmod 0664 /sys/class/leds/red/pattern_id
     chown system system /sys/class/leds/red/timed
     chmod 0664 /sys/class/leds/red/timed
     chown system system /sys/class/leds/red/time_on_off
     chmod 0664 /sys/class/leds/red/time_on_off
-
-on post-fs-data
-    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
-
-    # Create the directories used by the Wireless subsystem
-    mkdir /data/vendor/wifi 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
-    mkdir /data/misc/fm 0770 system system
-
-    # CONFIG_LGE_WLAN_PATCH
-    # to observe dnsmasq.leases file for dhcp information of soft ap.
-    chown dhcp system /data/misc/dhcp
-
-    # Create directory used by audio subsystem
-    mkdir /data/misc/audio 0770 audio audio
-
-    chown system system /persist
-    chmod 0771 /persist
-    chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
-    chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
-    chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
-    chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
-
-    # Chown polling nodes as needed from UI running on system server
-    chown system system /sys/devices/platform/msm_sdcc.1/polling
-    chown system system /sys/devices/platform/msm_sdcc.2/polling
-    chown system system /sys/devices/platform/msm_sdcc.3/polling
-    chown system system /sys/devices/platform/msm_sdcc.4/polling
-
-    chmod 0660 /dev/ramdump_adsp
-    chown system system /dev/ramdump_adsp
-
-    chmod 0660 /dev/ramdump_audio-ocmem
-    chown system system /dev/ramdump_audio-ocmem
-
-    chmod 0660 /dev/ramdump_modem
-    chown system system /dev/ramdump_modem
-
-    chmod 0660 /dev/ramdump_smem-modem
-    chown system system /dev/ramdump_smem-modem
-
-    chmod 0660 /dev/ramdump_smem-smd
-    chown system system /dev/ramdump_smem-smd
-
-    chmod 0660 /dev/ramdump_venus
-    chown system system /dev/ramdump_venus
-
-    # Create /data/system/time folder for time-services
-    mkdir /data/system/time/ 0700 system system
-
-    mkdir /data/audio/ 0770 media audio
-
-    setprop vold.post_fs_data_done 1
-
-    # Create a folder for SRS to be able to create a usercfg file
-    mkdir /data/data/media 0770 media media
 
 #
 # Services start here
@@ -318,10 +310,9 @@ service charger /charger
     critical
     seclabel u:r:healthd:s0
 
-service baseband-sh /vendor/bin/sh /vendor/bin/init.baseband.sh
+service set_baseband /vendor/bin/sh /vendor/bin/init.baseband.sh
     class late_start
     user root
-    seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
 
@@ -331,18 +322,12 @@ service hwaddrs /vendor/bin/hwaddrs
     group bluetooth wifi
     oneshot
 
-service btinit-sh /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
+service init_bluetooth /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
     class core
     user root
     seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
-
-service cal_sensors-sh /vendor/bin/sh /vendor/bin/init.sensors.sh
-    class core
-    user root
-    seclabel u:r:qti_init_shell:s0
-    oneshot
 
 # Running hwaddrs under init is enforcing 0600, we need more
 on property:init.svc.hwaddrs=stopped
@@ -350,7 +335,7 @@ on property:init.svc.hwaddrs=stopped
     chmod 644 /data/misc/bluetooth/bdaddr
 
 on property:vendor.bluetooth.hciattach=true
-     start btinit-sh
+    start init_bluetooth
 
 on property:vendor.bluetooth.hciattach=false
     setprop vendor.bluetooth.status off
@@ -431,14 +416,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-# --> init.msm8974_core.rc <--
-
-service lge-sensor-sh /vendor/bin/sh /vendor/bin/init.msm8974.sensor.sh
-    class core
-    user root
-    seclabel u:r:qti_init_shell:s0
-    oneshot
-
 # --> init.qcom.rc <--
 
 service qcom-sh /vendor/bin/sh /vendor/bin/init.qcom.sh
@@ -462,7 +439,6 @@ service sensors /vendor/bin/sensors.qcom
     class late_start
     user root
     group root wakelock
-    disabled
 
 on property:bluetooth.isEnabled=true
     write /sys/class/bluetooth/hci0/idle_timeout 7000
@@ -493,7 +469,7 @@ on property:sys.boot_completed=1
     # LMK
     write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
 
-    start baseband-sh
+    start set_baseband
 
 on property:sys.listeners.registered=*
     setprop vendor.sys.keymaster.loaded ${sys.listeners.registered}
