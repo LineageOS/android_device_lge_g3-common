@@ -213,14 +213,12 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.g3 \
-    init.g3.rc \
-    init.g3.power.rc \
-    init.g3.usb.rc \
-    init.msm8974.sensor.sh \
-    init.qcom.sh \
-    init.qcom.bt.sh \
     init.baseband.sh \
-    init.sensors.sh \
+    init.g3.power.rc \
+    init.g3.rc \
+    init.g3.usb.rc \
+    init.qcom.bt.sh \
+    init.qcom.sh \
     ueventd.g3.rc
 
 # RenderScript HAL
