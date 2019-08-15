@@ -16,7 +16,7 @@
 /dev/block/platform/msm_sdcc\.1/by-name/mpt                              u:object_r:mpt_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/sns                              u:object_r:sns_block_device:s0
 
-/sys/class/rfkill/rfkill0/state                                          u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0(/.*)?                                          u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                 u:object_r:sysfs_thermal:s0
 /sys/devices/mdp.0/qcom,mdss_fb_primary.178/leds/lcd-backlight(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/platform/tspdrv/nforce_timed                                u:object_r:sysfs_vibrator:s0
