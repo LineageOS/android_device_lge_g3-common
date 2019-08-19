@@ -92,9 +92,6 @@ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/configs/compatibility_matrix.xml
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Offmode Charging
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/charger/images
 
