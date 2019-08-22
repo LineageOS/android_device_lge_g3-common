@@ -216,3 +216,6 @@ vendor/firmware/wcnss.mdt
 
 # Widevine - from angler - OPR6.170623.017 factory image
 vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
+
+# NFC
+vendor/lib/hw/nfc_nci.msm8974.so|7dcb79a385dd1155cb9b6310a3e7b85b7dc8db13
