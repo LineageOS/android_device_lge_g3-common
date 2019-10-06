@@ -176,7 +176,6 @@ bin/irsc_util:vendor/bin/irsc_util
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk:vendor/app/shutdownlistener/shutdownlistener.apk
 bin/radish:vendor/bin/radish
-lib/librmnetctl.so:vendor/lib/librmnetctl.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
