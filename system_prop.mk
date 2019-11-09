@@ -43,7 +43,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
     ro.sf.lcd_density=560 \
     debug.sf.enable_gl_backpressure=1 \
-    debug.sf.latch_unsignaled=1
+    debug.sf.latch_unsignaled=1 \
+    debug.stagefright.ccodec=0
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
