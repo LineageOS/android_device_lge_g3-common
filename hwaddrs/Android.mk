@@ -1,4 +1,5 @@
 # Copyright (C) 2016 The CyanogenMod project
+# Copyright (C) 2019 The LineageOS project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,17 +14,13 @@
 # limitations under the License.
 
 
-LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(call my-dir)
+
 include $(CLEAR_VARS)
-
 LOCAL_MODULE_TAGS := optional
-
 LOCAL_SRC_FILES := getmac.c
-
+LOCAL_SHARED_LIBRARIES := libcutils
 LOCAL_PRELINK_MODULE := false
-
 LOCAL_MODULE := hwaddrs
-
 LOCAL_VENDOR_MODULE := true
-
 include $(BUILD_EXECUTABLE)

@@ -23,7 +23,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bt.bdaddr_path="/data/misc/bluetooth/bdaddr"
+    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
 
 # Dalvik heap
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -30,7 +30,7 @@
 /sys/devices/currentnow_device-[a-z0-9]+/power_supply/cn(/.*)?           u:object_r:sysfs_batteryinfo:s0
 /sys/devices/unified_wlc.[0-9]+/power_supply/wireless(/.*)?              u:object_r:sysfs_batteryinfo:s0
 
-/system/vendor/bin/hwaddrs                                               u:object_r:hwaddrs_exec:s0
+/(vendor|system/vendor)/bin/hwaddrs                                      u:object_r:hwaddrs_exec:s0
 /system/vendor/bin/thermal-engine                                        u:object_r:thermal-engine_exec:s0
 
 /data/system/time(/.*)?                                                  u:object_r:time_data_file:s0

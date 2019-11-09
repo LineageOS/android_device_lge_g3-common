@@ -316,23 +316,23 @@ service set_baseband /vendor/bin/sh /vendor/bin/init.baseband.sh
     oneshot
     disabled
 
-service hwaddrs /vendor/bin/hwaddrs
-    class core
-    user root
-    group bluetooth wifi
-    oneshot
-
 service init_bluetooth /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
     class core
     user root
-    seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
 
-# Running hwaddrs under init is enforcing 0600, we need more
-on property:init.svc.hwaddrs=stopped
-    chmod 644 /data/misc/wifi/config
-    chmod 644 /data/misc/bluetooth/bdaddr
+service vendor.conn_init /vendor/bin/hwaddrs
+    class core
+    user root
+    group system wifi bluetooth
+    oneshot
+
+on property:init.svc.vendor.conn_init=stopped
+    chmod 0644 /data/misc/wifi/config
+    chown system wifi /data/misc/wifi/config
+    chmod 0644 /data/misc/bluetooth/bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
 
 on property:vendor.bluetooth.hciattach=true
     start init_bluetooth
