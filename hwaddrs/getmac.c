@@ -31,7 +31,8 @@
 static const char TAG[] = "hwaddrs";
 
 // Validates the contents of the given file
-int checkAddr(char* filepath, int key) {
+int checkAddr(const char *const filepath, const char *const prefix)
+{
     int notallzeroes = 0;
     int checkfd = open(filepath, O_RDONLY);
 
@@ -43,9 +44,17 @@ int checkAddr(char* filepath, int key) {
 
         errno = 0; /* successful system calls don't clear errno */
 
-        if (key == 1) {
-            if (read(checkfd, charbuf, 14) != 14) break;
-            if (strncmp(charbuf, "cur_etheraddr=", 14) != 0) break;
+        if (prefix) {
+            if (strlen(prefix) > sizeof(charbuf)) {
+                __android_log_print(ANDROID_LOG_ERROR, TAG,
+"Internal error, prefix \"%s\" exceeds buffer length of %d.", prefix,
+sizeof(charbuf));
+                close(checkfd);
+                return 0;
+            }
+
+            if (read(checkfd, charbuf, strlen(prefix)) != (ssize_t)strlen(prefix)) break;
+            if (memcmp(charbuf, prefix, strlen(prefix))) break;
         }
 
         if (read(checkfd, charbuf, 17) != 17) break;
@@ -78,7 +87,8 @@ TAG, "unlink() failed: %s", strerror(errno));
 
 // Writes a file using an address from the misc partition
 // Generates a random address if the one read contains only zeroes
-void writeAddr(char* filepath, int offset, int key) {
+void writeAddr(const char *const filepath, int offset, const char *const prefix)
+{
     uint8_t macbytes[6];
     char macbuf[19];
     unsigned int i, macnums = 0;
@@ -157,7 +167,8 @@ TAG, "unlink() failed: %s", strerror(errno));
 }
 
 // Simple file copy
-void copyAddr(char* source, char* dest) {
+void copyAddr(const char *const source, const char *const dest)
+{
     char buffer[128];
     ssize_t bufcnt;
     int sourcefd = open(source, O_RDONLY);
@@ -208,30 +219,29 @@ TAG, "unlink() failed: %s", strerror(errno));
     }
 }
 
-int main() {
-    char *datamiscpath, *persistpath;
+void handlemac(const char *const datamisc, const char *const persist,
+int offset, const char *const prefix)
+{
+    if (!checkAddr(datamisc, prefix)) {
+        if (!checkAddr(persist, prefix))
+            writeAddr(persist, offset, prefix);
+        copyAddr(persist, datamisc);
+    }
+}
+
+
+int main()
+{
     srand(time(NULL));
 
     /* we are apparently invoked with a restrictive umask */
     umask(S_IWUSR|S_IWGRP|S_IWOTH);
 
-    datamiscpath = "/data/misc/wifi/config";
-    persistpath = "/persist/.macaddr";
-    if (checkAddr(datamiscpath, 1) == 0) {
-        if (checkAddr(persistpath, 1) == 0) {
-            writeAddr(persistpath, 0x3000, 1);
-        }
-        copyAddr(persistpath, datamiscpath);
-    }
+    handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x3000,
+"cur_etheraddr=");
 
-    datamiscpath = "/data/misc/bluetooth/bdaddr";
-    persistpath = "/persist/.baddr";
-    if (checkAddr(datamiscpath, 0) == 0) {
-        if (checkAddr(persistpath, 0) == 0) {
-            writeAddr(persistpath, 0x4000, 0);
-        }
-        copyAddr(persistpath, datamiscpath);
-    }
+    handlemac("/data/misc/bluetooth/bdaddr", "/persist/.baddr", 0x4000,
+NULL);
 
     return 0;
 }
