@@ -126,6 +126,13 @@ void writeAddr(const char *const filepath, int offset, const char *const prefix)
 macnums?"data from misc":"random data", filepath);
 
     if (macnums == 0) {
+        const char rerr[] = "read() of /dev/urandom failed: %2$s";
+
+        if ((miscfd = open("/dev/urandom", O_RDONLY)) < 0) {
+            errmsg = "open() of /dev/urandom failed: %2$s";
+            goto abort;
+        }
+
         // Generate random address, oreo hal style
         macbytes[0] = 0x22;
         macbytes[1] = 0x22;
@@ -133,13 +140,21 @@ macnums?"data from misc":"random data", filepath);
         macbytes[3] = (uint8_t) rand() % 256;
         macbytes[4] = (uint8_t) rand() % 256;
         macbytes[5] = (uint8_t) rand() % 256;
+
+        if (read(miscfd, macbytes+3, 3) != 3) {
+            errmsg = rerr;
+            goto abort;
+        }
+
+        close(miscfd);
+        miscfd = -1;
     }
 
-    if (key == 1 && write(writefd, "cur_etheraddr=", 14) != 14) {
+    if (prefix && write(writefd, prefix, strlen(prefix)) != (ssize_t)strlen(prefix)) {
         errmsg = "write() of \"%s\" failed: %s";
         goto abort;
     }
-    sprintf(macbuf, "%02x:%02x:%02x:%02x:%02x:%02x\n",
+    snprintf(macbuf, sizeof(macbuf), "%02x:%02x:%02x:%02x:%02x:%02x\n",
             macbytes[0], macbytes[1], macbytes[2], macbytes[3], macbytes[4], macbytes[5]);
     if (write(writefd, &macbuf, 18) != 18) {
         errmsg = "write() of \"%s\" failed: %s";
@@ -232,8 +247,6 @@ int offset, const char *const prefix)
 
 int main()
 {
-    srand(time(NULL));
-
     /* we are apparently invoked with a restrictive umask */
     umask(S_IWUSR|S_IWGRP|S_IWOTH);
 
