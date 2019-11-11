@@ -30,6 +30,7 @@
 
 # MPT
 /dev/block/platform/msm_sdcc\.1/by-name/mpt                              u:object_r:mpt_block_device:s0
+/mpt(/.*)?                                                               u:object_r:mpt_file:s0
 
 # NFC
 /dev/pn547                                                               u:object_r:nfc_device:s0
