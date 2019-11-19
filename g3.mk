@@ -130,11 +130,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FlipFlap
 
-# IPv6 tethering
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
-
 # IRDA
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
