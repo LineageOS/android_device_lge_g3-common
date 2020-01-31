@@ -1,1 +1,8 @@
 allow mediaserver camera_prop:property_service set;
+
+add_service(mediaserver, cameraserver_service)
+add_hwservice(mediaserver, fwk_camera_hwservice)
+
+allow mediaserver sensor_privacy_service:service_manager find;
+allow mediaserver cameraproxy_service:service_manager find;
+allow mediaserver hal_camera_hwservice:hwservice_manager find;
