@@ -3,3 +3,9 @@ userdebug_or_eng(`
 ')
 
 allow init sysfs:file {setattr};
+
+allow init {
+    sensors_persist_file
+    persist_drm_file
+    mpt_file
+}:dir mounton;
