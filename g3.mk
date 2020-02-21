@@ -221,6 +221,8 @@ PRODUCT_PACKAGES += \
     init.g3.power.rc \
     init.g3.rc \
     init.g3.usb.rc \
+    init.recovery.g3.rc \
+    init.recovery.g3.power.rc \
     init.qcom.bt.sh \
     init.qcom.sh \
     ueventd.g3.rc
