@@ -307,7 +307,8 @@ on boot
 
 service charger /system/bin/charger
     class charger
-    group system graphics
+    user system
+    group system graphics input
     critical
     seclabel u:r:charger:s0
 
