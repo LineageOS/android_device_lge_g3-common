@@ -231,6 +231,10 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     ueventd.g3.rc
 
+# Recovery
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

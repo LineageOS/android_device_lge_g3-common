@@ -48,6 +48,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
     debug.stagefright.ccodec=0
 
+# Fastbootd
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.fastbootd.available=true
+
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.am.reschedule_service=true \
