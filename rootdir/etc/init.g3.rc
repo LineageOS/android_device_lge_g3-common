@@ -19,10 +19,17 @@ on init
 on fs
     mount_all /vendor/etc/fstab.g3
 
-    restorecon_recursive /mpt
-    restorecon_recursive /persist
-    restorecon_recursive /persist-lg
-    restorecon_recursive /sns
+    # These directories have different labeling in stock rom.
+    # Jumping between stock and LineageOS needs restorecon -F
+    # to apply our labeling.
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF  /mpt
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF /persist
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF  /persist-lg
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF  /sns
 
     mkdir /persist/data 0700 system system
 
