@@ -166,7 +166,8 @@ PRODUCT_PACKAGES += \
     gps.msm8974
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf
+    $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Media
 PRODUCT_COPY_FILES += \
