@@ -50,10 +50,11 @@
 /sys/devices/system/cpu(/.*)?                                            u:object_r:sysfs_devices_system_cpu:s0
 
 # sysfs - power_supply
-/sys/devices/f9923000.i2c/i2c-1/1-006b/power_supply/battery(/.*)?        u:object_r:sysfs_batteryinfo:s0
-/sys/devices/f9923000.i2c/i2c-1/1-006b/power_supply/ac(/.*)?             u:object_r:sysfs_batteryinfo:s0
+/sys/devices/f9923000\.i2c/i2c-1/1-006b/power_supply/battery(/.*)?       u:object_r:sysfs_batteryinfo:s0
+/sys/devices/f9923000\.i2c/i2c-1/1-006b/power_supply/ac(/.*)?            u:object_r:sysfs_batteryinfo:s0
 /sys/devices/currentnow_device-[a-z0-9]+/power_supply/cn(/.*)?           u:object_r:sysfs_batteryinfo:s0
-/sys/devices/unified_wlc.[0-9]+/power_supply/wireless(/.*)?              u:object_r:sysfs_batteryinfo:s0
+/sys/devices/unified_wlc\.[0-9]+/power_supply/wireless(/.*)?             u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/lge_battery_id\.[0-9]+/power_supply/battery_id(/.*)? u:object_r:sysfs_batteryinfo:s0
 
 # Thermal
 /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                 u:object_r:sysfs_thermal:s0
