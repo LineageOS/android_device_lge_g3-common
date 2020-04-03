@@ -2,13 +2,5 @@
   {
     "repository": "android_kernel_lge_g3",
     "target_path": "kernel/lge/g3"
-  },
-  {
-    "repository": "android_packages_apps_FlipFlap",
-    "target_path": "packages/apps/FlipFlap"
-  },
-  {
-    "repository": "android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings"
   }
 ]
