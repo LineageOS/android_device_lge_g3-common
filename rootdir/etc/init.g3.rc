@@ -32,9 +32,6 @@ on fs
       restorecon -RF  /sns
 
     mkdir /persist/data 0700 system system
-
-    # Executing tune2fs to reserve some region in /data (40MB)
-    exec /system/bin/tune2fs -u system -r 10240 /dev/block/platform/msm_sdcc.1/by-name/userdata
     
     # FunctionFS
     mkdir /dev/usb-ffs 0770 shell shell
