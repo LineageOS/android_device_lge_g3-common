@@ -464,8 +464,5 @@ on property:sys.boot_completed=1
 
     start set_baseband
 
-on property:sys.listeners.registered=*
-    setprop vendor.sys.keymaster.loaded ${sys.listeners.registered}
-
 on property:apexd.status=ready
     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
