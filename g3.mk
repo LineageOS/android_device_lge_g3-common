@@ -98,8 +98,8 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    libbt-vendor \
-    hwaddrs
+    libbt-vendor
+HWADDRS_OFFSET_BLUETOOTH	:= 0x4000
 
 # Binder support symbols
 PRODUCT_PACKAGES += \
@@ -139,6 +139,8 @@ PRODUCT_PACKAGES += \
 # IRDA
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
+
+TARGET_ENABLE_COMMON_IR := false
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -274,3 +276,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
+HWADDRS_OFFSET_WIFI		:= 0x3000
+
+$(call inherit-product, device/lge/common/common.mk)
