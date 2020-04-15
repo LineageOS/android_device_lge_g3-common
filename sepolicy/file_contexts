@@ -14,9 +14,6 @@
 # Encryption
 /dev/block/platform/msm_sdcc\.1/by-name/encrypt                          u:object_r:metadata_block_device:s0
 
-# Hwaddrs
-/(vendor|system/vendor)/bin/hwaddrs                                      u:object_r:hwaddrs_exec:s0
-
 # IR
 /dev/ttyHSL1                                                             u:object_r:cir_device:s0
 
