@@ -331,7 +331,7 @@ service init_bluetooth /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
     oneshot
     disabled
 
-service vendor.conn_init /vendor/bin/hwaddrs
+service vendor.conn_init /vendor/bin/hwaddrs2
     class core
     user root
     group system wifi bluetooth

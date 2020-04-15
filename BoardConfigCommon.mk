@@ -49,6 +49,11 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_KERNEL_SOURCE := kernel/lge/g3
 TARGET_EXFAT_DRIVER := sdfat
 
+HWADDRS_MISC_PATH	:= /dev/block/platform/msm_sdcc.1/by-name/misc
+# Oreo HAL style random address
+HWADDRS_MAC_PREFIX	:= \\x22\\x22
+HWADDRS_MAC_PREFIX_LEN	:= 2
+
 # Audio
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -115,6 +120,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # SDClang
 TARGET_USE_SDCLANG := true
+
+# inherit from common lge
+-include device/lge/common/BoardConfigCommon.mk
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
