@@ -354,6 +354,10 @@ service vendor.qseecomd /vendor/bin/qseecomd
     user root
     group root
 
+on property:vendor.sys.listeners.registered=*
+    setprop sys.keymaster.loaded ${vendor.sys.listeners.registered}
+    setprop vendor.sys.keymaster.loaded ${vendor.sys.listeners.registered}
+
 service mpdecision /vendor/bin/mpdecision --avg_comp
     class main
     user root
