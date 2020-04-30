@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a25cada5_1d8692da",
+        "filename": "rootdir/etc/init.g3.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2020-04-30T22:03:36Z",
+      "side": 1,
+      "message": "add:\n    wait_for_prop sys.keymaster.loaded true",
+      "revId": "95f4d0ef1949b09d78ccfc952f904757833e50e6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
