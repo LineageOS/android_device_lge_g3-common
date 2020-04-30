@@ -152,6 +152,10 @@ on early-boot
     
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
+    # start qseecomd early
+    # vold needs keymaster for FDE
+    start vendor.qseecomd
+
 on boot
     # Create netmgr daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
