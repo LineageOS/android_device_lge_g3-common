@@ -9,3 +9,5 @@ allow init {
     persist_drm_file
     mpt_file
 }:dir mounton;
+
+allow init firmware_file:dir {mounton setattr};

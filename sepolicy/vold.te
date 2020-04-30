@@ -1,0 +1,2 @@
+allow vold default_android_hwservice:hwservice_manager find;
+allow vold hal_bootctl_hwservice:hwservice_manager find;
