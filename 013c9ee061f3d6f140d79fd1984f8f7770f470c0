@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "adfa90e7_6ef26204",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-30T15:18:49Z",
+      "side": 1,
+      "message": "Please pick the change that I linked before.",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "013c9ee061f3d6f140d79fd1984f8f7770f470c0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
