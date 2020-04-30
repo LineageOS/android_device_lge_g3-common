@@ -16,6 +16,29 @@
       "revId": "103214cb8834d1bc6fab3ea580299ee2fd49e3d5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e315da21_c21f6977",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 15173
+      },
+      "writtenOn": "2020-04-30T14:27:20Z",
+      "side": 1,
+      "message": "assuming this even fixes anything, are you sure it isn\u0027t liboemcrypto.so (you know, with the *lib*)",
+      "range": {
+        "startLine": 168,
+        "startChar": 11,
+        "endLine": 168,
+        "endChar": 20
+      },
+      "revId": "103214cb8834d1bc6fab3ea580299ee2fd49e3d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
