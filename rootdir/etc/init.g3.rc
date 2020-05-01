@@ -7,7 +7,7 @@ on early-init
 
     # increase read ahead cache size
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
-    
+
     write /sys/class/leds/lcd-backlight/brightness 177
 
 on init
@@ -32,7 +32,7 @@ on fs
       restorecon -RF  /sns
 
     mkdir /persist/data 0700 system system
-    
+
     # FunctionFS
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
@@ -40,7 +40,7 @@ on fs
     write /sys/class/android_usb/android0/f_ffs/aliases adb
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
-    
+
     setprop sys.usb.ffs.aio_compat 1
     setprop persist.adb.nonblocking_ffs 0
     setprop ro.adb.nonblocking_ffs 0
@@ -113,7 +113,7 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp system
     mkdir /data/misc/fm 0770 system system
-    
+
     # Vibrator
     chown root system /sys/devices/platform/tspdrv/nforce_timed
     chmod 0664 /sys/devices/platform/tspdrv/nforce_timed
@@ -149,8 +149,10 @@ on early-boot
     setrlimit 8 67108864 67108864
 
     write /sys/kernel/boot_adsp/boot 1
-    
+
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
+
+    start vendor.qseecomd
 
 on boot
     # Create netmgr daemon socket area
