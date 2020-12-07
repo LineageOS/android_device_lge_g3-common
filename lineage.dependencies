@@ -2,5 +2,9 @@
   {
     "repository": "android_kernel_lge_g3",
     "target_path": "kernel/lge/g3"
+  },
+  {
+    "repository": "android_hardware_sony_timekeep",
+    "target_path": "hardware/sony/timekeep"
   }
 ]
