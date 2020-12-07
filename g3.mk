@@ -141,6 +141,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FlipFlap
 
+# HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 # IRDA
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
