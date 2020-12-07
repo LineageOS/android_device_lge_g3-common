@@ -14,6 +14,9 @@
 # Encryption
 /dev/block/platform/msm_sdcc\.1/by-name/encrypt                          u:object_r:metadata_block_device:s0
 
+# Gatekeeper
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software u:object_r:hal_gatekeeper_default_exec:s0
+
 # Hwaddrs
 /(vendor|system/vendor)/bin/hwaddrs                                      u:object_r:hwaddrs_exec:s0
 
