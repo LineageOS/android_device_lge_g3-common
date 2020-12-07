@@ -104,9 +104,6 @@ on post-fs-data
     mkdir /data/misc/sensors 0775 system system
     restorecon_recursive /data/misc/sensors
 
-    # Create /data/system/time folder for time-services
-    mkdir /data/system/time/ 0700 system system
-
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
@@ -369,12 +366,6 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-client stream 0666 system system
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
-
-service time_daemon /vendor/bin/time_daemon
-   capabilities SYS_TIME
-   class late_start
-   user system
-   group net_raw
 
 service adsprpcd /vendor/bin/adsprpcd
    class main
