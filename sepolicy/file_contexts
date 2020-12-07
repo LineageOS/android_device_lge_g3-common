@@ -60,8 +60,9 @@
 /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                 u:object_r:sysfs_thermal:s0
 /system/vendor/bin/thermal-engine                                        u:object_r:thermal-engine_exec:s0
 
-# Time
-/data/system/time(/.*)?                                                  u:object_r:time_data_file:s0
+# TimeKeep
+/sys/devices/qpnp-rtc-[0-9]+/rtc/rtc0(/.*)?                              u:object_r:sysfs_rtc:s0
+/(system/vendor|vendor)/bin/timekeep                                     u:object_r:timekeep_exec:s0
 
 # Vibrator
 /sys/devices/virtual/input/lge_touch(/.*)?                               u:object_r:sysfs_lgetouch:s0
