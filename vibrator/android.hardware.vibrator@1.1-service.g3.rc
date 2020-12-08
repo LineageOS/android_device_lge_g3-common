@@ -1,4 +1,5 @@
 service vendor.vibrator-1-1 /vendor/bin/hw/android.hardware.vibrator@1.1-service.g3
+    interface android.hardware.vibrator@1.0::IVibrator default
     interface android.hardware.vibrator@1.1::IVibrator default
     class hal
     user system
