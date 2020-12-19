@@ -208,7 +208,7 @@ on boot
     chmod 644 /sys/devices/virtual/input/lge_touch/lpwg_test_ctrl
     chown system system /sys/devices/virtual/input/lge_touch/touch_wake_up_test
     chmod 664 /sys/devices/virtual/input/lge_touch/touch_wake_up_test
-    chown system lgkeyguard /sys/devices/virtual/input/lge_touch/keyguard
+    chown system radio /sys/devices/virtual/input/lge_touch/keyguard
     chmod 664 /sys/devices/virtual/input/lge_touch/keyguard
     chown system system /sys/devices/virtual/input/lge_touch/incoming_call
     chown system system /sys/devices/virtual/input/lge_touch/ime_status
