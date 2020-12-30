@@ -47,6 +47,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1
 
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
+
 # Fastbootd
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fastbootd.available=true
