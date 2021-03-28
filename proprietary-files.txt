@@ -184,11 +184,6 @@ etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
 framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 
-# RenderScript - (Google bullhead - OPR4.170623.006)
-vendor/lib/libRSDriver_adreno.so|2044baf0169177e52aba6d7138f80559ecf2b58d
-vendor/lib/librs_adreno.so|cceaf847d749ac2f1a3af3a1ae6ba653d93e0ed9
-vendor/lib/librs_adreno_sha1.so|e797997d3ac69dfa87904863672c5b9769c796cc
-
 # IR
 lib/libcir_driver.so:vendor/lib/libcir_driver.so
 lib/hw/consumerir.msm8974.so:vendor/lib/hw/consumerir.msm8974.so
