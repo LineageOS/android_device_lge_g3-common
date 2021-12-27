@@ -64,7 +64,7 @@
 /system/vendor/bin/thermal-engine                                        u:object_r:thermal-engine_exec:s0
 
 # TimeKeep
-/sys/devices/qpnp-rtc-[0-9]+/rtc/rtc0(/.*)?                              u:object_r:sysfs_rtc:s0
+/sys/devices/qpnp-rtc-[a-f0-9]+/rtc/rtc0(/.*)?                           u:object_r:sysfs_rtc:s0
 /(system/vendor|vendor)/bin/timekeep                                     u:object_r:timekeep_exec:s0
 
 # Vibrator
