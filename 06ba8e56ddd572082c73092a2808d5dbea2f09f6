@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a709a46f_04ed6413",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31252
+      },
+      "writtenOn": "2022-06-22T14:57:49Z",
+      "side": 1,
+      "message": "Hi man,\nplease review this workaround. Its probably not the best solution, but it works. Maybe you have some other idea how to solve this?\n\nBest regards,\n\nyova",
+      "revId": "06ba8e56ddd572082c73092a2808d5dbea2f09f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
