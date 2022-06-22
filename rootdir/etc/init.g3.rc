@@ -459,3 +459,22 @@ on property:sys.boot_completed=1
 
 on property:apexd.status=ready
     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
+
+on property:sys.boot_completed=1
+    wait /tmp/nothing 15
+    stop vendor.qseecomd
+    trigger start_qsee
+
+on start_qsee
+   wait /tmp/nothing 1
+   start vendor.qseecomd
+   trigger restart_audioserver
+
+on restart_audioserver
+   wait /tmp/nothing 1
+   stop audioserver
+   trigger start_audioserver
+
+on start_audioserver
+   wait /tmp/nothing 1
+   start audioserver
